@@ -143,3 +143,9 @@ html[lang="en-GB"] body{font-family:-apple-system,BlinkMacSystemFont,"Helvetica 
 
 /* ── Footer brand compact ────────────────────────────── */
 footer .brand{font-size:15px}footer .brand small{display:block;margin-top:3px;font-size:7.5px;color:var(--c-dim);letter-spacing:.18em}
+
+/* ── About page: summary vs. archive distinction ─────── */
+.stats-bar{padding:6px 0}.stats-bar-item strong{font-size:clamp(20px,2.5vw,28px);line-height:1.2}.stats-bar-item span{font-size:8px;letter-spacing:.16em;color:var(--c-dim)}.stats-bar-item{font-size:10px;color:var(--c-dim)}
+
+/* Detailed dl — more archival, smaller text, wider spacing */
+.about dl,.prose dl{margin-top:40px}.about dl div,.prose dl div{padding:16px 0;font-size:13.5px}.about dt,.prose dt{color:var(--c-dim);font-size:11px;letter-spacing:.08em}.about dd,.prose dd{font-size:13.5px}
