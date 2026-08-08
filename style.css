@@ -99,3 +99,32 @@ html[lang="en-GB"] body{font-family:-apple-system,BlinkMacSystemFont,"Helvetica 
  footer{grid-template-columns:1fr;gap:12px;padding:32px var(--pad);text-align:center}.copy{text-align:center!important}
  html[lang="en-GB"] .hero h1{font-size:clamp(42px,11vw,50px)}html[lang="en-GB"] .hero h1 br,html[lang="en-GB"] .page-hero h1 br{display:none}html[lang="en-GB"] .hero h1 em{display:block;margin-top:.03em}html[lang="en-GB"] .page-hero h1{font-size:clamp(36px,10vw,44px)}html[lang="en-GB"] .section h2{font-size:30px}
 }
+
+/* ── V15 Compact Announce Bar ────────────────────────── */
+.announce-bar{display:flex;align-items:center;gap:14px;padding:9px var(--pad);border-bottom:1px solid var(--c-glass-border);background:rgba(10,10,10,.55);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);font-size:12.5px;overflow:hidden}.announce-bar-label{color:var(--c-dim);font-size:8px;letter-spacing:.2em;text-transform:uppercase;white-space:nowrap;flex-shrink:0}.announce-bar-text{flex:1;min-width:0;color:var(--c-muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.announce-bar-text a{color:var(--c-fg);text-decoration:none}.announce-bar-text a:hover{text-decoration:underline}.announce-bar-link{color:var(--c-dim);text-decoration:none;font-size:11px;white-space:nowrap;flex-shrink:0;transition:color var(--t-fast)}.announce-bar-link:hover{color:#fff}@media(max-width:800px){.announce-bar{flex-wrap:wrap;gap:6px 14px;padding:8px var(--pad-sm)}.announce-bar-text{white-space:normal;display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical;overflow:hidden}.announce-bar-link{font-size:10px;margin-left:auto}}
+
+/* ── Brand refinement ────────────────────────────────── */
+.brand{align-items:baseline;gap:0}.brand .mark{flex-shrink:0;margin-right:10px}.brand .brand-main{font-size:16px;font-weight:650;color:#fff;line-height:1}.brand .brand-sub{font-size:9px;color:var(--c-dim);letter-spacing:.06em;margin-left:10px;display:inline-block;line-height:1}.brand small{display:none}@media(max-width:800px){.brand .brand-sub{display:none}.brand .brand-main{font-size:14px}}
+
+/* ── Cleaned kickers (no numeric prefix) ─────────────── */
+.kicker{color:var(--c-dim);font-size:9px;font-weight:600;letter-spacing:.26em;text-transform:uppercase;margin:0}
+
+/* ── Alternate research block ────────────────────────── */
+.research-block.alt{grid-template-columns:1fr 120px}.research-block.alt .research-block-num{text-align:right}@media(max-width:800px){.research-block.alt{grid-template-columns:1fr}.research-block.alt .research-block-num{text-align:left}}
+
+/* ── Stats bar (About page) ──────────────────────────── */
+.stats-bar{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--c-glass-border);border-bottom:1px solid var(--c-glass-border)}@media(max-width:800px){.stats-bar{grid-template-columns:1fr}}.stats-bar-item{padding:20px var(--pad-sm);border-right:1px solid var(--c-glass-border);display:flex;flex-direction:column;gap:4px}.stats-bar-item:last-child{border:0}.stats-bar-item span{color:var(--c-dim);font-size:8.5px;letter-spacing:.18em;text-transform:uppercase}.stats-bar-item strong{font:400 clamp(22px,2.8vw,32px) "Songti SC",Georgia,serif;color:#ddd}.stats-bar-item{color:var(--c-dim);font-size:11px}
+
+/* ── Sub-page hero differentiation ──────────────────── */
+.page-hero-about:after{content:"ARCHIVE · 档案"}
+.page-hero-timeline:after{content:"TIMELINE · 时间轴"}
+.page-hero-principles:after{content:"PRINCIPLES · 原则"}@media(max-width:800px){.page-hero:after{display:none}}
+
+/* ── Scroll down hint ────────────────────────────────── */
+.scroll{display:block;position:absolute;right:var(--pad);bottom:5vh;color:var(--c-dim);font-size:8px;letter-spacing:.28em;z-index:2}
+
+/* ── Remove old announcement section ─────────────────── */
+.announcements{display:none !important}.section#announcements{display:none !important}
+
+/* ── Translate announcements in bar ──────────────────── */
+.announce-bar[data-empty] .announce-bar-text{color:var(--c-dim)}
