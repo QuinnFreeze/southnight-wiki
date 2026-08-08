@@ -110,7 +110,7 @@ html[lang="en-GB"] body{font-family:-apple-system,BlinkMacSystemFont,"Helvetica 
 .kicker{color:var(--c-dim);font-size:9px;font-weight:600;letter-spacing:.26em;text-transform:uppercase;margin:0}
 
 /* ── Alternate research block ────────────────────────── */
-.research-block.alt{grid-template-columns:1fr 120px}.research-block.alt .research-block-num{text-align:right}@media(max-width:800px){.research-block.alt{grid-template-columns:1fr}.research-block.alt .research-block-num{text-align:left}}
+.research-block.alt .research-block-num{grid-column:2}.research-block.alt>div:last-child{grid-column:1;grid-row:1}.research-block.alt .research-block-num{text-align:right}@media(max-width:800px){.research-block.alt .research-block-num,.research-block.alt>div:last-child{grid-column:auto;grid-row:auto}.research-block.alt .research-block-num{text-align:left}}
 
 /* ── Stats bar (About page) ──────────────────────────── */
 .stats-bar{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--c-glass-border);border-bottom:1px solid var(--c-glass-border)}@media(max-width:800px){.stats-bar{grid-template-columns:1fr}}.stats-bar-item{padding:20px var(--pad-sm);border-right:1px solid var(--c-glass-border);display:flex;flex-direction:column;gap:4px}.stats-bar-item:last-child{border:0}.stats-bar-item span{color:var(--c-dim);font-size:8.5px;letter-spacing:.18em;text-transform:uppercase}.stats-bar-item strong{font:400 clamp(22px,2.8vw,32px) "Songti SC",Georgia,serif;color:#ddd}.stats-bar-item{color:var(--c-dim);font-size:11px}
