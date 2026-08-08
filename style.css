@@ -128,3 +128,18 @@ html[lang="en-GB"] body{font-family:-apple-system,BlinkMacSystemFont,"Helvetica 
 
 /* ── Translate announcements in bar ──────────────────── */
 .announce-bar[data-empty] .announce-bar-text{color:var(--c-dim)}
+
+/* ── Section numbers (subtle, differentiated) ─────────── */
+.section-num{font-size:7.5px;font-weight:500;letter-spacing:.22em;color:rgba(255,255,255,.18);margin-right:2px}@media(max-width:800px){.section-num{display:block;margin-bottom:2px}}
+
+/* ── Compact announce bar polish ─────────────────────── */
+.announce-bar{font-size:12px;gap:16px;padding:10px var(--pad);border-bottom:1px solid var(--c-glass-border)}.announce-bar-label{font-size:7.5px;letter-spacing:.22em;color:var(--c-dim)}.announce-bar-text{font-size:12px;color:var(--c-muted)}.announce-bar-link{font-size:10.5px;color:var(--c-dim)}@media(max-width:800px){.announce-bar{padding:9px var(--pad-sm);gap:6px 12px}.announce-bar-text{font-size:11px}}
+
+/* ── Sub-page hero fine differentiation ──────────────── */
+.page-hero-about:before{background:linear-gradient(180deg,rgba(0,0,0,.48),rgba(0,0,0,.1) 60%,#050505),linear-gradient(0deg,rgba(0,0,0,.1),transparent 30%)}.page-hero-timeline:after{content:"TIMELINE · 历任成员";right:auto;left:4vw}.page-hero-principles:after{content:"PRINCIPLES · 四条原则"}.page-hero-research:after{content:"RESEARCH · 项目展示"}@media(max-width:800px){.page-hero:after{display:none}}
+
+/* ── Stats bar spacing ───────────────────────────────── */
+.stats-bar{border-top:1px solid var(--c-glass-border);margin-top:-1px}
+
+/* ── Footer brand compact ────────────────────────────── */
+footer .brand{font-size:15px}footer .brand small{display:block;margin-top:3px;font-size:7.5px;color:var(--c-dim);letter-spacing:.18em}
