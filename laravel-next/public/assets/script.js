@@ -1,6 +1,6 @@
 document.querySelectorAll('#year').forEach(el=>el.textContent=new Date().getFullYear());
 const pages=[{href:'index.html',zh:'首页',en:'Home',icon:'⌂'},{href:'about.html',zh:'关于',en:'About',icon:'○'},{href:'research.html',zh:'研究',en:'Research',icon:'◇'},{href:'leadership.html',zh:'成员',en:'People',icon:'◎'},{href:'principles.html',zh:'理念',en:'Vision',icon:'✦'}];
-const current=(location.pathname.split('/').pop()||'index.html').toLowerCase();
+const current=({about:'about.html',research:'research.html',leadership:'leadership.html',principles:'principles.html'}[location.pathname.split('/').pop().toLowerCase()]||(location.pathname.split('/').pop()||'index.html')).toLowerCase();
 const foundPageIndex=pages.findIndex(p=>p.href===current);
 const pageIndex=foundPageIndex>=0?foundPageIndex:0;
 const T={
