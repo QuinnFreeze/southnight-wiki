@@ -1,0 +1,5 @@
+@extends('layouts.app')
+@section('title','注册 · 南夜维基')
+@section('content')
+<section class="page-hero"><p class="eyebrow">ACCOUNT · 账户</p><h1>创建账户</h1><p>注册南夜维基账户。密码至少 10 位。</p></section><section class="section"><form method="post" action="{{ route('register.submit') }}" class="panel" style="max-width:520px;margin:auto">@csrf<label>用户名</label><input name="username" value="{{ old('username') }}" required minlength="3" maxlength="24">@error('username')<p class="announcement-error">{{ $message }}</p>@enderror<label>邮箱</label><input name="email" type="email" value="{{ old('email') }}" required>@error('email')<p class="announcement-error">{{ $message }}</p>@enderror<label>密码</label><input name="password" type="password" required minlength="10" autocomplete="new-password"><label>确认密码</label><input name="password_confirmation" type="password" required minlength="10" autocomplete="new-password">@error('password')<p class="announcement-error">{{ $message }}</p>@enderror<button class="primary" type="submit">注册</button><p>已有账户？<a href="{{ route('login') }}">登录</a></p></form></section>
+@endsection

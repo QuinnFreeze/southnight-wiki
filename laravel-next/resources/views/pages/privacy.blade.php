@@ -1,0 +1,36 @@
+@extends('layouts.app')
+@section('title', '隐私政策 · 南夜维基')
+@section('content')
+<section class="page-hero page-hero-privacy"><p class="eyebrow">PRIVACY POLICY · 隐私政策</p><h1>隐私政策</h1><p>最后更新：2026 年 8 月 8 日</p></section><div class="section privacy-content"><div class="privacy-intro"><p>南夜维基（Southnight.wiki，以下简称"南夜"）重视访问者的隐私与个人信息安全。本隐私政策说明您访问 southnight.uk 及其相关页面时，我们可能如何收集、使用、保存和保护相关信息。</p><p>我们坚持数据最小化原则：仅在网站正常运行、安全维护或您主动与我们联系所必需的范围内处理信息，不以出售个人数据或建立商业广告画像为目的。</p></div>
+
+<h2>01 · 适用范围</h2><p>本政策适用于 southnight.uk 以及由该网站直接提供并明确受本政策约束的页面和服务。</p><p>如果您通过本站链接访问其他第三方网站、平台或服务，对方可能拥有独立的隐私政策，其数据处理行为不受本政策控制。</p>
+
+<h2>02 · 我们可能处理的信息</h2><h3>网站访问与技术信息</h3><p>当您访问本站时，服务器、托管服务或安全服务可能自动处理部分必要的技术信息，例如：</p><ul><li>IP 地址；</li><li>浏览器及设备类型；</li><li>操作系统；</li><li>访问时间；</li><li>请求访问的页面；</li><li>来源页面；</li><li>基础网络与安全日志。</li></ul><p>这些信息主要用于保证网站正常运行、排查故障、防止滥用和网络攻击，以及维护网站安全。</p><p>我们不会仅根据上述技术信息主动识别普通访问者的真实身份。</p><h3>您主动提供的信息</h3><p>如果您通过电子邮件、联系渠道或其他方式主动联系我们，我们可能收到您主动提供的信息，例如：</p><ul><li>昵称或姓名；</li><li>电子邮件地址；</li><li>联系内容；</li><li>与相关请求有关的其他信息。</li></ul><p>我们仅将这些信息用于处理您的请求、回复沟通或解决相关问题。</p><p>请不要主动向我们提交与请求无关的敏感个人信息。</p>
+
+<h2>03 · Cookie 与本地存储</h2><p>本站可能使用维持网站基本功能、安全或保存必要设置所需的 Cookie、本地存储或类似技术。</p><p>对于严格必要的技术，其用途仅限于保障网站正常工作、安全以及记住必要设置。</p><p>如果未来启用访问统计、分析工具或其他非必要 Cookie，我们将在适当情况下向访问者提供清晰说明，并在法律要求时取得您的有效同意后再启用。</p><p>南夜不会以出售用户数据或建立商业广告画像为目的设置追踪技术。</p><p>英国有关 Cookie 和类似技术的主要规则包括 <a href="https://www.legislation.gov.uk/uksi/2003/2426/contents" target="_blank" rel="noopener noreferrer">Privacy and Electronic Communications (EC Directive) Regulations 2003（PECR）</a>，访问者也可以参考<a href="https://ico.org.uk/for-organisations/guide-to-pecr/cookies-and-similar-technologies/" target="_blank" rel="noopener noreferrer">英国信息专员办公室（ICO）发布的 Cookie 与类似技术指南</a>。</p>
+
+<h2>04 · 法律依据与处理目的</h2><p>我们可能为了以下目的处理必要信息：</p><ul><li>提供和维护网站；</li><li>保证网络及服务器安全；</li><li>防止垃圾请求、滥用和恶意攻击；</li><li>排查网站故障；</li><li>改善网站稳定性和可访问性；</li><li>回复您主动发起的联系；</li><li>履行适用的法律义务。</li></ul><p>在适用情况下，个人数据处理可能受到以下英国数据保护法律框架约束：</p><ul><li><a href="https://www.legislation.gov.uk/eur/2016/679/contents" target="_blank" rel="noopener noreferrer">UK General Data Protection Regulation（UK GDPR）</a>；</li><li><a href="https://www.legislation.gov.uk/ukpga/2018/12/contents" target="_blank" rel="noopener noreferrer">Data Protection Act 2018</a>；</li><li><a href="https://www.legislation.gov.uk/ukpga/2025/18/contents" target="_blank" rel="noopener noreferrer">Data (Use and Access) Act 2025</a>；</li><li><a href="https://www.legislation.gov.uk/uksi/2003/2426/contents" target="_blank" rel="noopener noreferrer">Privacy and Electronic Communications Regulations 2003（PECR）</a>。</li></ul><p>根据具体情况，我们可能基于合法利益、您的同意、履行您的请求、合同需要或法律义务等适当法律基础处理个人数据。</p>
+
+<h2>05 · 数据共享</h2><p>我们不会出售、出租或以数据交易为目的向第三方提供访问者的个人信息。</p><p>为了维持网站运行，部分必要信息可能由为本站提供基础设施的服务商处理，例如：</p><ul><li>域名及 DNS 服务；</li><li>网站托管服务；</li><li>内容分发网络（CDN）；</li><li>网络安全及防护服务；</li><li>必要的技术基础设施供应商。</li></ul><p>我们仅允许这些服务在提供相应功能所必要的范围内处理数据。</p><p>如果适用法律要求我们提供相关信息，我们也可能在法律允许或要求的范围内进行披露。</p>
+
+<h2>06 · 国际数据传输</h2><p>由于互联网基础设施及第三方技术服务可能分布于不同国家或地区，部分技术数据可能在英国以外被处理。</p><p>如果相关处理受到英国数据保护法律约束，我们将根据适用要求采取或要求服务提供商采取适当的数据保护措施。</p>
+
+<h2>07 · 数据保存</h2><p>我们不会无期限保存个人数据。</p><p>网站技术及安全日志仅在网站运行、安全维护、故障排查或履行法律义务所合理需要的期限内保存。</p><p>您主动联系我们时提供的信息，将根据处理相关请求所需时间以及合理的后续记录需求进行保存。</p><p>当信息不再具有合理用途，且不存在法律要求继续保存时，我们会根据实际技术条件删除、匿名化或停止继续使用相关数据。</p>
+
+<h2>08 · 信息安全</h2><p>我们会采取合理的技术和组织措施保护网站及相关数据，包括必要的服务器安全、防滥用措施以及访问权限控制。</p><p>但是，任何互联网传输或电子存储方式都无法保证绝对安全。因此，我们无法承诺网络环境中的数据具有绝对、零风险的安全性。</p>
+
+<h2>09 · 您的数据保护权利</h2><p>根据 <a href="https://www.legislation.gov.uk/eur/2016/679/contents" target="_blank" rel="noopener noreferrer">UK GDPR</a>、<a href="https://www.legislation.gov.uk/ukpga/2018/12/contents" target="_blank" rel="noopener noreferrer">Data Protection Act 2018</a> 以及其他适用的数据保护法律，您可能拥有以下部分或全部权利：</p><ul><li>知晓个人数据如何被使用；</li><li>请求访问我们持有的您的个人数据；</li><li>请求更正不准确或不完整的数据；</li><li>在适用情况下请求删除个人数据；</li><li>请求限制某些数据处理；</li><li>对特定的数据处理提出异议；</li><li>在适用情况下请求数据可携带；</li><li>在适用情况下撤回此前给予的同意；</li><li>获得与某些自动化决策相关的保护。</li></ul><p>这些权利可能受到法律规定的条件、限制或例外约束。</p><p>您可以通过我们的隐私联系邮箱提出相关请求：<br><a href="mailto:xiaoqiuyi@qiulan.wiki">xiaoqiuyi@qiulan.wiki</a></p>
+
+<h2>10 · 数据保护投诉</h2><p>如果您认为南夜对您的个人数据处理存在问题，可以首先通过以下邮箱与我们联系：<br><a href="mailto:xiaoqiuyi@qiulan.wiki">xiaoqiuyi@qiulan.wiki</a></p><p>我们将根据适用的数据保护法律和合理的实际条件处理相关请求或投诉。</p><p>如果您对处理结果仍有异议，或者认为您的数据保护权利受到侵犯，您可以向英国独立数据保护监管机构 <a href="https://ico.org.uk/" target="_blank" rel="noopener noreferrer">Information Commissioner's Office（ICO）</a> 寻求帮助或提出投诉。</p>
+
+<h2>11 · 第三方链接</h2><p>本站可能包含指向外部网站、法律文本、公共机构或其他第三方服务的链接。</p><p>当您离开 southnight.uk 后，第三方可能按照自己的隐私政策处理您的信息。南夜无法控制第三方网站的内容、技术或隐私实践。</p><p>建议您在向第三方服务提供个人信息前阅读其隐私政策。</p>
+
+<h2>12 · 未成年人隐私</h2><p>本站不会以收集未成年人个人信息作为网站运营目的，也不会主动要求普通访问者提供年龄等身份信息。</p><p>如果我们发现有人在不适当的情况下向本站提供了不必要的个人信息，我们会在合理可行的范围内采取适当措施进行处理。</p>
+
+<h2>13 · 本政策的更新</h2><p>随着网站功能、技术基础设施或适用法律发生变化，本隐私政策可能适时更新。</p><p>政策发生修改后，我们会更新本页面所显示的"最后更新"日期。</p><p>如果未来发生可能对访问者隐私产生重大影响的变化，我们会尽合理方式进行说明。</p>
+
+<h2>14 · 联系我们</h2><p>如果您对本隐私政策、个人数据处理方式、数据保护权利或相关投诉有任何问题，可以联系我们：</p><p>隐私与数据保护联系邮箱<br><a href="mailto:xiaoqiuyi@qiulan.wiki">xiaoqiuyi@qiulan.wiki</a></p><p>南夜维基 · Southnight.wiki<br>southnight.uk</p>
+
+<p class="privacy-closing">向南而行，探索智能的长夜。</p>
+</div>
+@endsection

@@ -1,0 +1,2 @@
+@php($code=$exception->getStatusCode())
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{{ $code }} · Southnight.wiki</title><link rel="stylesheet" href="{{ asset('assets/style.css') }}"></head><body><main class="page-hero"><p class="eyebrow">ERROR · {{ $code }}</p><h1>{{ $code }}</h1><p>@if($code===404)页面不存在。@elseif($code===403)你没有访问此页面的权限。@elseif($code===429)请求过于频繁，请稍后再试。@else网站暂时无法完成请求，请稍后再试。@endif</p><p><a href="{{ route('home') }}">返回首页 →</a></p></main></body></html>

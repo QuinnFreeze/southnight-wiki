@@ -1,0 +1,5 @@
+@extends('layouts.app')
+@section('title', '关于我们 · 南夜维基')
+@section('content')
+<section class="page-hero page-hero-about"><p class="eyebrow">ABOUT · 关于南夜</p><h1>以公共价值，<br>理解技术。</h1><p>南夜维基是一个起源于英国、以公共价值为导向的独立互联网社区。我们关注技术如何被负责任地理解、实践与分享。</p></section><div class="stats-bar"><div class="stats-bar-item"><span>成立地点</span><strong>英国</strong>United Kingdom</div><div class="stats-bar-item"><span>组织性质</span><strong>独立互联网社区</strong>Independent Internet Community</div><div class="stats-bar-item"><span>关注领域</span><strong>AI · 网络 · 安全</strong>AI · Internet · Security</div></div><section class="section split"><div><p class="kicker">WHO WE ARE</p><h2>技术最终应当<br>回应人的需要。</h2></div><div class="prose"><p>南夜维基（Southnight.wiki）以公共价值为出发点，是一个关注 AI 智能体实践利用、互联网网络技术研究与网络安全维护的独立互联网社区。</p><p>我们并不把技术进步本身视为终点。真正值得追求的，是让知识更容易抵达，让工具更可靠，让网络空间更加安全，并让技术发展最终造福人类。</p><dl><div><dt>成立地点</dt><dd>英国 · United Kingdom</dd></div><div><dt>组织性质</dt><dd>独立互联网社区</dd></div><div><dt>关注领域</dt><dd>AI · 网络技术 · 网络安全</dd></div></dl></div></section><section class="quote-band"><blockquote>“让技术走向人，也让人走向更好的未来。”</blockquote><p>SOUTHNIGHT.WIKI</p></section>
+@endsection

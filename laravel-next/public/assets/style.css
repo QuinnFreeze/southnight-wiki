@@ -1,0 +1,217 @@
+/* ============================================================
+   SNW Design System v3 — Apple Liquid Glass + Editorial Layout
+   Monochrome · Restrained · Research-grade · Micro-interactions
+   ============================================================ */
+:root{
+ --c-bg:#050505;--c-fg:#f4f4f1;--c-muted:#a3a39f;--c-dim:#666;--c-line:rgba(255,255,255,.09);
+ --c-glass:rgba(10,10,10,.55);--c-glass-hover:rgba(18,18,18,.68);--c-glass-border:rgba(255,255,255,.07);
+ --c-glass-glow:0 1px 0 rgba(255,255,255,.025) inset;
+ --max-w:1340px;--pad:max(28px,7vw);--pad-sm:max(22px,5vw);
+ --t-fast:.18s;--t-base:.26s;--t-slow:.42s;
+ --f-hero:clamp(64px,7.8vw,108px);--f-h1:clamp(52px,6.4vw,88px);--f-h2:clamp(36px,4vw,58px);
+ --f-body:14.5px;--lh-body:1.78;--lh-heading:1.1;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;background:var(--c-bg)}
+body{margin:0;background:var(--c-bg);color:var(--c-fg);font:var(--f-body)/var(--lh-body) -apple-system,BlinkMacSystemFont,"PingFang SC","Helvetica Neue",Arial,sans-serif;overflow-x:hidden;letter-spacing:.005em}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+.noise{position:fixed;inset:0;z-index:90;pointer-events:none;opacity:.02;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='.75' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+
+/* ── Nav ─────────────────────────────────────────────── */
+.nav{position:fixed;inset:0 0 auto;z-index:30;height:66px;padding:0 var(--pad);display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--c-glass-border);background:rgba(8,8,8,.72);backdrop-filter:blur(24px) saturate(160%);-webkit-backdrop-filter:blur(24px) saturate(160%);box-shadow:var(--c-glass-glow)}.brand{display:flex;align-items:center;gap:10px;color:#fff;text-decoration:none;font-weight:650;line-height:1;font-size:14px}.brand small{display:block;margin-top:4px;color:#888;font-size:7px;letter-spacing:.24em;text-transform:uppercase}.mark{display:grid;place-items:center;width:34px;height:34px;border:1px solid rgba(255,255,255,.4);border-radius:50%;font-size:8px;font-weight:750;color:#fff;flex-shrink:0}.brand:after{content:"SNW / UK";padding-left:11px;margin-left:2px;border-left:1px solid var(--c-glass-border);color:#666;font-size:7px;letter-spacing:.16em;white-space:nowrap}
+.nav nav{display:flex;gap:4px}.nav nav a{position:relative;padding:8px 14px;color:var(--c-muted);text-decoration:none;font-size:12.5px;transition:color var(--t-fast);white-space:nowrap}.nav nav a:hover{color:#fff}.nav nav a.active{color:#fff}.nav nav a.active::after{content:"";position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:4px;height:4px;border-radius:50%;background:#fff;opacity:.7}
+
+/* ── Hero ────────────────────────────────────────────── */
+.hero,.page-hero{position:relative;background:#050505 url('night-sky.jpg?v=20260808-13') center/cover no-repeat}.hero:before,.page-hero:before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.42),rgba(0,0,0,.12) 58%,#050505)}.hero{min-height:100svh;padding:180px var(--pad) 10vh;display:flex;align-items:flex-end}.hero-copy{max-width:920px;position:relative;z-index:2}.stars,.orbit,.scroll{display:none}.eyebrow,.kicker{font-size:9px;font-weight:600;letter-spacing:.28em;color:var(--c-dim);text-transform:uppercase;margin:0}.hero .eyebrow{font-size:8.5px;color:var(--c-dim);opacity:.85}.hero h1,.page-hero h1,.section h2,.quote-band blockquote{font-family:"Songti SC","STSong",Georgia,"Times New Roman",serif;font-weight:400}.hero h1{margin:18px 0 22px;font-size:var(--f-hero);line-height:var(--lh-heading);letter-spacing:-.05em}.hero h1 em{font-style:normal;display:block;margin-top:.02em}.intro,.page-hero>p:last-child{max-width:580px;margin:0;color:#b8b8b4;font-size:15px;line-height:1.8}.actions{display:flex;gap:10px;margin-top:30px}.actions a{padding:11px 20px;border:1px solid var(--c-glass-border);color:#ddd;text-decoration:none;font-size:12px;font-weight:600;background:rgba(8,8,8,.5);backdrop-filter:blur(12px) saturate(130%);-webkit-backdrop-filter:blur(12px) saturate(130%);transition:all var(--t-base)}.actions a:hover{background:rgba(18,18,18,.7);border-color:rgba(255,255,255,.15)}.actions .primary{background:rgba(245,245,240,.85);color:#0a0a0a;border-color:transparent}.actions .primary:hover{background:#fff}.actions .secondary:hover::after{content:" →"}
+
+/* ── Page Hero ───────────────────────────────────────── */
+.page-hero{min-height:66svh;padding:154px var(--pad) 58px;display:flex;flex-direction:column;justify-content:flex-end}.page-hero h1{max-width:860px;margin:16px 0 18px;font-size:var(--f-h1);line-height:1.08;letter-spacing:-.04em}.page-hero>p:last-child{max-width:560px;font-size:14.5px}.page-hero:after{content:"SOUTHNIGHT WIKI — SNW";position:absolute;right:4vw;bottom:6vh;writing-mode:vertical-rl;color:rgba(255,255,255,.1);font-size:7px;letter-spacing:.3em}
+
+/* ── Section ─────────────────────────────────────────── */
+.section{padding:96px var(--pad);border-top:1px solid var(--c-glass-border);max-width:var(--max-w);margin:0 auto;width:100%}.section h2{margin:14px 0 20px;font-size:var(--f-h2);line-height:1.22;letter-spacing:-.03em}
+
+/* ── About / Split ───────────────────────────────────── */
+.about,.split{display:grid;grid-template-columns:1fr 1fr;gap:8vw}.about-text,.prose{padding-top:20px;color:#aaa}.about-text>p:first-child,.prose>p:first-child{color:#ddd;font-size:16px}.about dl,.prose dl{margin-top:28px}.about dl div,.prose dl div{display:flex;justify-content:space-between;gap:16px;padding:12px 0;border-top:1px solid var(--c-glass-border)}dt{color:var(--c-dim)}dd{margin:0;text-align:right;color:#ccc}
+
+/* ── Stats row (About page) ──────────────────────────── */
+.stats-row{display:grid;grid-template-columns:repeat(3,1fr);padding:44px 0;border-top:1px solid var(--c-glass-border);border-bottom:1px solid var(--c-glass-border)}.stat-item{padding:22px var(--pad-sm);border-right:1px solid var(--c-glass-border)}.stat-item:last-child{border:0}.stat-item .stat-label{color:var(--c-dim);font-size:9px;letter-spacing:.22em;text-transform:uppercase;margin-bottom:10px}.stat-item .stat-value{font:400 clamp(24px,3.2vw,38px)/1.2 "Songti SC",Georgia,serif;color:#ddd}.stat-item .stat-detail{color:var(--c-muted);font-size:12px;margin-top:6px}
+
+/* ── Cards (Research modules) ────────────────────────── */
+.focus-head{display:flex;align-items:flex-end;justify-content:space-between;gap:30px;margin-bottom:12px}.focus-head p{max-width:340px;color:var(--c-muted)}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:36px}.cards article{position:relative;min-height:320px;padding:38px 34px 42px;border-right:1px solid var(--c-glass-border);border-bottom:1px solid var(--c-glass-border);background:var(--c-glass);backdrop-filter:blur(14px) saturate(130%);-webkit-backdrop-filter:blur(14px) saturate(130%);box-shadow:var(--c-glass-glow);transition:transform var(--t-base)}.cards article:last-child{border-right:0}.cards article:hover{background:rgba(18,18,18,.65);transform:translateY(-3px)}.cards article::before{content:attr(data-num);position:absolute;top:30px;left:34px;font:400 clamp(52px,6vw,80px)/1 Georgia,"Times New Roman",serif;color:rgba(255,255,255,.06);pointer-events:none}.cards article>span{position:absolute;top:32px;left:34px;font:400 clamp(48px,5.5vw,72px)/1 Georgia,"Times New Roman",serif;color:rgba(255,255,255,.06);pointer-events:none}.icon{display:none}.cards h3{font-size:21px;font-weight:500;margin:60px 0 14px;position:relative}.cards h3::after{content:"";display:block;width:22px;height:1px;background:rgba(255,255,255,.18);margin-top:14px}.cards p{color:var(--c-muted);font-size:13px;line-height:1.82;max-width:280px}
+
+/* ── Timeline ────────────────────────────────────────── */
+.history{display:grid;grid-template-columns:.6fr 1.4fr;gap:7vw}.history-title{align-self:start}.history-title>p:last-child{color:var(--c-dim)}.timeline{position:relative;padding-left:28px;border-left:1px solid var(--c-glass-border)}.timeline article{position:relative;padding:18px 0 22px 24px;transition:transform var(--t-fast)}.timeline article:hover{transform:translateX(5px)}.timeline article::before{content:"";position:absolute;left:-33px;top:27px;width:9px;height:9px;border-radius:50%;background:#333;border:2px solid rgba(255,255,255,.15);transition:all var(--t-fast)}.timeline article:hover::before{background:#fff;border-color:#fff}.timeline b{position:absolute;left:-24px;top:22px;font:10px Georgia,"Times New Roman",serif;color:var(--c-dim)}.timeline h3{margin:0 0 2px;font-size:22px;font-weight:500}.timeline p{margin:0;color:var(--c-dim);font-size:12px}.honor{grid-column:2;display:flex;align-items:center;justify-content:space-between;padding:22px 28px;margin-top:24px;border:1px solid rgba(255,255,255,.12);background:rgba(16,16,16,.72);backdrop-filter:blur(16px) saturate(150%);-webkit-backdrop-filter:blur(16px) saturate(150%);box-shadow:var(--c-glass-glow)}.honor>span{writing-mode:vertical-rl;color:var(--c-dim);font-size:7.5px;letter-spacing:.16em}.honor h3{margin:0;font:28px Georgia}.honor p{margin:0;color:var(--c-dim);font-size:11px}.honor i{font-size:24px}
+
+/* ── Research Page (straight DOM, no grid-areas) ──────── */
+.research-section{padding:96px var(--pad);max-width:var(--max-w);margin:0 auto;width:100%;border-top:1px solid var(--c-glass-border)}.research-item{display:grid;grid-template-columns:120px 1fr;column-gap:5vw;padding:72px 0;border-top:1px solid var(--c-glass-border)}.research-item:first-child{border-top:none}.research-item-num{font:400 clamp(52px,6vw,80px)/1 Georgia,"Times New Roman",serif;color:rgba(255,255,255,.06);margin:-8px 0 0;grid-row:1/-1}.research-item .kicker{color:var(--c-dim);font-size:9px;font-weight:600;letter-spacing:.26em;text-transform:uppercase;margin:0 0 8px}.research-item h2{font-size:var(--f-h2);margin:0 0 12px;line-height:1.18}.research-item p{color:var(--c-muted);max-width:620px;font-size:14px;line-height:1.82;margin:0}@media(max-width:800px){.research-item{grid-template-columns:1fr;column-gap:0;padding:46px 0}.research-item-num{font-size:56px;margin:0;grid-row:auto}}
+
+/* ── Leadership Page ─────────────────────────────────── */
+.leadership-page{display:grid;grid-template-columns:.7fr 1.3fr;gap:7vw;max-width:var(--max-w);margin:0 auto;width:100%}.role-feature{align-self:start;border-top:1px solid #fff;padding-top:22px;position:sticky;top:90px}.role-feature .kicker{margin-bottom:10px}.role-feature h2{font-size:62px;margin:0 0 10px}.role-feature>p:last-child{color:var(--c-muted)}.leader-list{position:relative;padding-left:28px;border-left:1px solid var(--c-glass-border)}.leader-list article{position:relative;padding:16px 0 18px 24px;transition:transform var(--t-fast)}.leader-list article:hover{transform:translateX(4px)}.leader-list article::before{content:"";position:absolute;left:-33px;top:22px;width:9px;height:9px;border-radius:50%;background:#333;border:2px solid rgba(255,255,255,.15);transition:all var(--t-fast)}.leader-list article:hover::before{background:#fff;border-color:#fff}.leader-list b{position:absolute;left:-24px;top:17px;font:10px Georgia,"Times New Roman",serif;color:var(--c-dim)}.leader-list small{display:block;color:var(--c-dim);font-size:11px;margin-bottom:2px;text-transform:uppercase;letter-spacing:.12em}.leader-list h3{font-size:24px;margin:0 0 2px;font-weight:500}.leader-list p{margin:0;color:var(--c-dim);font-size:12px}.honor.wide{grid-column:2;margin-top:20px}
+
+/* ── Principles Page ─────────────────────────────────── */
+.principle-stack{padding-bottom:40px}.principle-block{display:grid;grid-template-columns:120px 1fr;gap:5vw;padding:72px 0;border-bottom:1px solid var(--c-glass-border)}.principle-block-num{font:400 clamp(56px,6.2vw,84px)/1 Georgia,"Times New Roman",serif;color:rgba(255,255,255,.04);margin:-6px 0 0}.principle-block h2{font-size:var(--f-h2);margin:24px 0 14px;line-height:1.16}.principle-block p{color:var(--c-muted);max-width:560px;font-size:14px;line-height:1.84}
+
+/* ── Announcements ───────────────────────────────────── */
+.announcements{max-width:var(--max-w);margin:0 auto;width:100%}.announcement-head{display:flex;align-items:flex-end;justify-content:space-between;gap:28px;margin-bottom:32px}.announcement-head h2{margin-bottom:0}.announcement-head>a{color:var(--c-muted);text-decoration:none;font-size:11px;padding-bottom:3px;border-bottom:1px solid var(--c-dim);transition:all var(--t-fast)}.announcement-head>a:hover{color:#fff;border-color:#fff}.announcement-list{border-top:1px solid var(--c-glass-border)}.announcement-item{display:grid;grid-template-columns:100px minmax(0,1fr) auto;gap:30px;padding:28px 0;border-bottom:1px solid var(--c-glass-border);transition:transform var(--t-fast)}.announcement-item:hover{transform:translateX(3px)}.announcement-date{color:var(--c-dim);font:10px Georgia,serif;letter-spacing:.06em;padding-top:2px}.announcement-item h3{margin:0 0 6px;font:400 23px/1.3 "Songti SC",Georgia,serif}.announcement-item p{margin:0;max-width:680px;color:var(--c-muted);white-space:pre-wrap;font-size:13.5px}.announcement-pin{color:var(--c-muted);font-size:8px;letter-spacing:.12em}.announcement-loading,.announcement-empty,.announcement-error{padding:32px 0;color:var(--c-dim)}.announcement-error{color:#b99}
+
+/* ── Quote band ──────────────────────────────────────── */
+.quote-band{min-height:36vh;padding:70px var(--pad);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;background:rgba(235,235,230,.92);color:#0a0a0a;backdrop-filter:blur(20px) saturate(160%);-webkit-backdrop-filter:blur(20px) saturate(160%)}.quote-band blockquote{margin:0;font-size:clamp(28px,3.4vw,46px);line-height:1.36}.quote-band p{font-size:8px;letter-spacing:.3em;margin-top:24px}
+
+/* ── Page switcher ───────────────────────────────────── */
+.page-switcher{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--c-glass-border);max-width:var(--max-w);margin:0 auto;width:100%}.page-switcher a{min-height:100px;padding:26px var(--pad);display:flex;flex-direction:column;justify-content:center;color:#fff;text-decoration:none;transition:background var(--t-fast)}.page-switcher a+a{align-items:flex-end;border-left:1px solid var(--c-glass-border);text-align:right}.page-switcher a:hover{background:rgba(255,255,255,.03)}.page-switcher small{color:var(--c-dim);font-size:9px;letter-spacing:.1em}.page-switcher strong{font:400 clamp(18px,2.6vw,28px) Georgia,"Songti SC",serif}
+
+/* ── Mobile tabs ─────────────────────────────────────── */
+.mobile-tabs{display:none}.lang-toggle{position:fixed;top:14px;right:18px;z-index:80;width:38px;height:38px;border:1px solid rgba(255,255,255,.2);border-radius:50%;background:rgba(8,8,8,.55);color:#fff;font-weight:700;font-size:10px;backdrop-filter:blur(20px) saturate(150%);-webkit-backdrop-filter:blur(20px) saturate(150%);cursor:pointer;transition:all var(--t-fast)}.lang-toggle:hover{background:#fff;color:#0a0a0a}
+
+/* ── Footer ──────────────────────────────────────────── */
+footer{padding:38px var(--pad);display:grid;grid-template-columns:1fr 1fr 1fr;align-items:center;border-top:1px solid var(--c-glass-border)}footer>p{text-align:center;color:var(--c-dim);font-size:10px}.copy{text-align:right!important}
+
+/* ── Reveal micro-interactions ───────────────────────── */
+.reveal{opacity:0;transform:translateY(12px);transition:opacity .55s ease-out,transform .55s ease-out}.reveal.visible{opacity:1;transform:none}
+
+/* ── EN/ZH ───────────────────────────────────────────── */
+html[lang="en-GB"] body{font-family:-apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif;line-height:1.62}html[lang="en-GB"] .hero h1,html[lang="en-GB"] .page-hero h1,html[lang="en-GB"] .section h2,html[lang="en-GB"] blockquote{font-family:Georgia,"Times New Roman",serif;letter-spacing:-.04em}html[lang="en-GB"] .hero h1 em{font-style:italic}html[lang="en-GB"] .eyebrow,html[lang="en-GB"] .kicker{letter-spacing:.2em}html[lang="zh-CN"] body{line-height:1.76}html[lang="zh-CN"] .hero h1,html[lang="zh-CN"] .page-hero h1{letter-spacing:-.05em}
+
+/* ── Responsive ──────────────────────────────────────── */
+@media(max-width:800px){
+ :root{--f-hero:clamp(48px,13vw,60px);--f-h1:clamp(40px,11vw,50px);--f-h2:clamp(32px,9vw,41px);--pad:22px;--pad-sm:20px}
+ body{padding-bottom:68px}
+ .nav{height:60px;padding:0 20px}.nav nav,.brand:after{display:none}.brand{font-size:13px}.mark{width:32px;height:32px;font-size:8px}
+ .lang-toggle{top:12px;right:12px;width:36px;height:36px}
+ .hero{min-height:100svh;padding:120px var(--pad) 72px}.hero h1{margin:14px 0 16px}.hero .eyebrow{font-size:7.5px}.intro{font-size:13.5px;max-width:310px}.actions{grid-template-columns:1fr 1fr;gap:8px;margin-top:22px}.actions a{padding:10px 7px;text-align:center;font-size:11px;white-space:nowrap}
+ .page-hero{min-height:62svh;padding:118px var(--pad) 42px}.page-hero:after{display:none}.page-hero h1{margin:12px 0}.page-hero>p:last-child{font-size:13.5px}
+ .section{padding:60px var(--pad)}
+ .about,.split,.history,.leadership-page{grid-template-columns:1fr;gap:20px}
+ .about-text,.prose{padding-top:0;font-size:13px}.about-text>p:first-child,.prose>p:first-child{font-size:14px}
+ .about dd,.prose dd{max-width:58%}
+ .stats-row{grid-template-columns:1fr}.stat-item{border-right:0;border-bottom:1px solid var(--c-glass-border);padding:18px var(--pad-sm)}.stat-item:last-child{border-bottom:0}
+ .focus-head{display:block}
+ .cards{grid-template-columns:1fr}.cards article{min-height:240px;padding:30px;border-right:0}.cards article::before{font-size:60px;top:24px;left:30px}.cards h3{font-size:19px;margin-top:52px}
+ .history-title{position:static}.timeline{padding-left:22px}.timeline article{padding:14px 0 16px 18px}.timeline article::before{left:-27px;top:20px;width:7px;height:7px}.timeline b{left:-20px;top:18px}.timeline h3{font-size:19px}.honor,.honor.wide{grid-column:1}
+
+ .role-feature{position:static;padding-top:16px}.role-feature h2{font-size:46px}.leader-list{padding-left:24px}.leader-list article{padding:12px 0 14px 18px}.leader-list article::before{left:-29px;top:18px;width:7px;height:7px}.leader-list b{left:-22px;top:15px}.leader-list h3{font-size:21px}
+ .principle-block{grid-template-columns:1fr;gap:8px;padding:50px 0}.principle-block-num{font-size:62px;margin:0}
+ .quote-band{min-height:30vh;padding:48px var(--pad)}.quote-band blockquote{font-size:25px}
+ .research-section{padding:60px var(--pad)}
+ .announcement-head{display:block;margin-bottom:22px}.announcement-head>a{display:inline-block;margin-top:10px}.announcement-item{grid-template-columns:1fr;gap:6px;padding:20px 0}.announcement-item h3{font-size:20px}.announcement-pin{grid-row:1}
+ .page-switcher a{min-height:84px;padding:18px var(--pad)}.page-switcher strong{font-size:15px}
+ .mobile-tabs{position:fixed;display:grid;grid-template-columns:repeat(5,1fr);left:6px;right:6px;bottom:max(6px,env(safe-area-inset-bottom));z-index:70;height:56px;border:1px solid var(--c-glass-border);border-radius:14px;background:rgba(12,12,12,.88);backdrop-filter:blur(24px) saturate(170%);-webkit-backdrop-filter:blur(24px) saturate(170%);box-shadow:0 2px 28px rgba(0,0,0,.45);overflow:hidden}.mobile-tabs a{min-width:0;display:flex;flex-direction:column;align-items:center;justify-content:center;color:var(--c-muted);text-decoration:none;font-size:8px;gap:1px}.mobile-tabs a span{font-size:14px;line-height:1}.mobile-tabs a i{font-style:normal;white-space:nowrap;font-size:7.5px}.mobile-tabs a.active{color:#fff;background:rgba(255,255,255,.06)}
+ footer{grid-template-columns:1fr;gap:12px;padding:32px var(--pad);text-align:center}.copy{text-align:center!important}
+ html[lang="en-GB"] .hero h1{font-size:clamp(42px,11vw,50px)}html[lang="en-GB"] .hero h1 br,html[lang="en-GB"] .page-hero h1 br{display:none}html[lang="en-GB"] .hero h1 em{display:block;margin-top:.03em}html[lang="en-GB"] .page-hero h1{font-size:clamp(36px,10vw,44px)}html[lang="en-GB"] .section h2{font-size:30px}
+}
+
+/* ── V15 Compact Announce Bar ────────────────────────── */
+.announce-bar{display:flex;align-items:center;gap:14px;padding:9px var(--pad);border-bottom:1px solid var(--c-glass-border);background:rgba(10,10,10,.55);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);font-size:12.5px;overflow:hidden}.announce-bar-label{color:var(--c-dim);font-size:8px;letter-spacing:.2em;text-transform:uppercase;white-space:nowrap;flex-shrink:0}.announce-bar-text{flex:1;min-width:0;color:var(--c-muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.announce-bar-text a{color:var(--c-fg);text-decoration:none}.announce-bar-text a:hover{text-decoration:underline}.announce-bar-link{color:var(--c-dim);text-decoration:none;font-size:11px;white-space:nowrap;flex-shrink:0;transition:color var(--t-fast)}.announce-bar-link:hover{color:#fff}@media(max-width:800px){.announce-bar{flex-wrap:wrap;gap:6px 14px;padding:8px var(--pad-sm)}.announce-bar-text{white-space:normal;display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical;overflow:hidden}.announce-bar-link{font-size:10px;margin-left:auto}}
+
+/* ── Brand refinement ────────────────────────────────── */
+.brand{align-items:baseline;gap:0}.brand .mark{flex-shrink:0;margin-right:10px}.brand .brand-main{font-size:16px;font-weight:650;color:#fff;line-height:1}.brand .brand-sub{font-size:9px;color:var(--c-dim);letter-spacing:.06em;margin-left:10px;display:inline-block;line-height:1}.brand small{display:none}@media(max-width:800px){.brand .brand-sub{display:none}.brand .brand-main{font-size:14px}}
+
+/* ── Cleaned kickers (no numeric prefix) ─────────────── */
+.kicker{color:var(--c-dim);font-size:9px;font-weight:600;letter-spacing:.26em;text-transform:uppercase;margin:0}
+
+/* ── Alternate research block (visual right num) ─────── */
+
+
+/* ── Stats bar (About page) ──────────────────────────── */
+.stats-bar{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--c-glass-border);border-bottom:1px solid var(--c-glass-border)}@media(max-width:800px){.stats-bar{grid-template-columns:1fr}}.stats-bar-item{padding:20px var(--pad-sm);border-right:1px solid var(--c-glass-border);display:flex;flex-direction:column;gap:4px}.stats-bar-item:last-child{border:0}.stats-bar-item span{color:var(--c-dim);font-size:8.5px;letter-spacing:.18em;text-transform:uppercase}.stats-bar-item strong{font:400 clamp(22px,2.8vw,32px) "Songti SC",Georgia,serif;color:#ddd}.stats-bar-item{color:var(--c-dim);font-size:11px}
+
+/* ── Sub-page hero differentiation ──────────────────── */
+.page-hero-about:after{content:"ARCHIVE · 档案"}
+.page-hero-timeline:after{content:"TIMELINE · 时间轴"}
+.page-hero-principles:after{content:"PRINCIPLES · 原则"}@media(max-width:800px){.page-hero:after{display:none}}
+
+/* ── Scroll down hint ────────────────────────────────── */
+.scroll{display:block;position:absolute;right:var(--pad);bottom:5vh;color:var(--c-dim);font-size:8px;letter-spacing:.28em;z-index:2}
+
+/* ── Remove old announcement section ─────────────────── */
+.announcements{display:none !important}.section#announcements{display:none !important}
+
+/* ── Translate announcements in bar ──────────────────── */
+.announce-bar[data-empty] .announce-bar-text{color:var(--c-dim)}
+
+/* ── Section numbers (subtle, differentiated) ─────────── */
+.section-num{font-size:7.5px;font-weight:500;letter-spacing:.22em;color:rgba(255,255,255,.18);margin-right:2px}@media(max-width:800px){.section-num{display:block;margin-bottom:2px}}
+
+/* ── Compact announce bar polish ─────────────────────── */
+.announce-bar{font-size:12px;gap:16px;padding:10px var(--pad);border-bottom:1px solid var(--c-glass-border)}.announce-bar-label{font-size:7.5px;letter-spacing:.22em;color:var(--c-dim)}.announce-bar-text{font-size:12px;color:var(--c-muted)}.announce-bar-link{font-size:10.5px;color:var(--c-dim)}@media(max-width:800px){.announce-bar{padding:9px var(--pad-sm);gap:6px 12px}.announce-bar-text{font-size:11px}}
+
+/* ── Sub-page hero fine differentiation ──────────────── */
+.page-hero-about:before{background:linear-gradient(180deg,rgba(0,0,0,.48),rgba(0,0,0,.1) 60%,#050505),linear-gradient(0deg,rgba(0,0,0,.1),transparent 30%)}.page-hero-timeline:after{content:"TIMELINE · 历任成员";right:auto;left:4vw}.page-hero-principles:after{content:"PRINCIPLES · 四条原则"}.page-hero-research:after{content:"RESEARCH · 项目展示"}@media(max-width:800px){.page-hero:after{display:none}}
+
+/* ── Stats bar spacing ───────────────────────────────── */
+.stats-bar{border-top:1px solid var(--c-glass-border);margin-top:-1px}
+
+/* ── Footer brand compact ────────────────────────────── */
+footer .brand{font-size:15px}footer .brand small{display:block;margin-top:3px;font-size:7.5px;color:var(--c-dim);letter-spacing:.18em}
+
+/* ── About page: summary vs. archive distinction ─────── */
+.stats-bar{padding:6px 0}.stats-bar-item strong{font-size:clamp(20px,2.5vw,28px);line-height:1.2}.stats-bar-item span{font-size:8px;letter-spacing:.16em;color:var(--c-dim)}.stats-bar-item{font-size:10px;color:var(--c-dim)}
+
+/* Detailed dl — more archival, smaller text, wider spacing */
+.about dl,.prose dl{margin-top:40px}.about dl div,.prose dl div{padding:16px 0;font-size:13.5px}.about dt,.prose dt{color:var(--c-dim);font-size:11px;letter-spacing:.08em}.about dd,.prose dd{font-size:13.5px}
+
+/* ── Privacy Policy ──────────────────────────────────── */
+.privacy-content{max-width:780px;padding:72px var(--pad) 96px}.privacy-content h2{font-size:clamp(22px,2.5vw,30px);margin:48px 0 16px;padding-top:32px;border-top:1px solid var(--c-glass-border)}.privacy-content h3{font-size:15px;margin:28px 0 10px;color:#ccc;font-weight:500}.privacy-content ul{padding-left:18px;margin:10px 0 20px}.privacy-content li{margin:6px 0;color:var(--c-muted);font-size:13.5px}.privacy-content a{color:#bbb;text-decoration:underline;text-underline-offset:3px}.privacy-content a:hover{color:#fff}.privacy-intro{margin-bottom:30px;font-size:15px;color:#ccc}.privacy-closing{text-align:center;margin-top:48px;padding-top:32px;border-top:1px solid var(--c-glass-border);color:var(--c-dim);font-style:italic}.page-hero-privacy{min-height:38svh;background-position:center 25%}.page-hero-privacy:after{content:"PRIVACY · 隐私"}footer a[href="privacy.html"]{color:var(--c-dim);font-size:10px;text-decoration:none}.footer a[href="privacy.html"]:hover{color:#fff}@media(max-width:800px){.privacy-content{padding:48px var(--pad-sm) 72px}.privacy-content h2{font-size:20px;margin-top:36px}}
+
+/* ── Community homepage expansion ────────────────────── */
+.section-heading{display:flex;align-items:flex-end;justify-content:space-between;gap:32px;margin-bottom:34px}.section-heading>p{max-width:360px;color:var(--c-muted)}.section-link,.story-link{color:var(--c-muted);font-size:12px;text-decoration:none;border-bottom:1px solid var(--c-dim);padding-bottom:3px}.section-link:hover,.story-link:hover{color:#fff;border-color:#fff}
+.news-preview{padding-top:58px;padding-bottom:58px}.news-list{border-top:1px solid var(--c-line)}.news-item{display:grid;grid-template-columns:110px minmax(0,1fr) 90px;gap:24px;padding:22px 4px;border-bottom:1px solid var(--c-line)}.news-item time{color:var(--c-dim);font-size:11px}.news-item h3{font:400 21px/1.3 "Songti SC",Georgia,serif;margin:0 0 5px}.news-item p{margin:0;color:var(--c-muted);font-size:13px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.news-item a{justify-self:end;color:var(--c-muted);text-decoration:none;font-size:11px}.news-item a:hover{color:#fff}
+.projects{background:#070707}.project-grid{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--c-line)}.project-card{position:relative;min-height:300px;padding:30px;border-right:1px solid var(--c-line)}.project-card:last-child{border:0}.project-card .project-status{position:absolute;top:26px;right:26px;color:var(--c-muted);font-size:9px;border:1px solid var(--c-line);padding:4px 8px}.project-index{color:var(--c-dim);font:10px Georgia,serif;letter-spacing:.12em}.project-card h3{margin:66px 0 13px;font-size:22px}.project-card>p:not(.project-index){color:var(--c-muted);font-size:13px;min-height:68px}.project-card>a{display:inline-block;margin-top:22px;color:#ddd;text-decoration:none;font-size:12px;border-bottom:1px solid #555;padding-bottom:2px}
+.principle-summary{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--c-line)}.principle-summary article{padding:28px 24px;border-right:1px solid var(--c-line)}.principle-summary article:last-child{border:0}.principle-summary b{font:11px Georgia,serif;color:var(--c-dim)}.principle-summary h3{font-size:19px;margin:28px 0 10px}.principle-summary p{color:var(--c-muted);font-size:13px}
+.story{display:grid;grid-template-columns:1.1fr .9fr;gap:9vw;background:#080808}.story-copy>p:not(.kicker){color:var(--c-muted);max-width:620px}.story-link{display:inline-block;margin-top:20px}.story-meta{border-top:1px solid var(--c-line)}.story-meta>div{display:flex;justify-content:space-between;align-items:center;padding:18px 0;border-bottom:1px solid var(--c-line)}.story-meta span{color:var(--c-dim);font-size:11px}.story-meta strong{font:400 23px "Songti SC",Georgia,serif}
+.site-footer{display:grid;grid-template-columns:1.4fr repeat(3,1fr);gap:5vw;padding:62px var(--pad) 38px;border-top:1px solid var(--c-line);background:#040404}.site-footer h3{color:var(--c-dim);font-size:9px;letter-spacing:.18em;text-transform:uppercase;margin:0 0 14px}.site-footer a{display:block;color:var(--c-muted);text-decoration:none;font-size:12px;margin:8px 0}.site-footer a:hover{color:#fff}.footer-brand strong{font-size:16px;letter-spacing:.1em}.footer-brand p{color:var(--c-muted);font:400 20px/1.5 "Songti SC",Georgia,serif;max-width:260px}.footer-copy{grid-column:1/-1!important;text-align:left!important;padding-top:24px;border-top:1px solid var(--c-line);color:var(--c-dim)!important}
+.transparency-list{max-width:860px}.transparency-list>section{padding:42px 0;border-bottom:1px solid var(--c-line)}.transparency-list h2{font-size:clamp(28px,3vw,40px);margin:12px 0}.transparency-list p:last-child{color:var(--c-muted);max-width:720px}.transparency-list a{color:#ccc;text-decoration:none;border-bottom:1px solid #555}.page-hero-transparency{min-height:48svh}
+@media(max-width:800px){.section-heading{display:block;margin-bottom:25px}.section-link{display:inline-block;margin-top:12px}.news-preview{padding-top:44px;padding-bottom:44px}.news-item{grid-template-columns:1fr;gap:5px;padding:19px 0}.news-item a{justify-self:start;margin-top:5px}.project-grid,.principle-summary{grid-template-columns:1fr}.project-card,.principle-summary article{min-height:auto;border-right:0;border-bottom:1px solid var(--c-line)}.project-card{padding:26px}.project-card h3{margin-top:50px}.project-card>p:not(.project-index){min-height:auto}.story{grid-template-columns:1fr;gap:36px}.site-footer{grid-template-columns:1fr 1fr;padding:46px var(--pad) 90px}.footer-brand{grid-column:1/-1}.footer-copy{grid-column:1/-1!important}.transparency-list>section{padding:32px 0}}
+
+
+/* ============================================================
+   2026 Editorial homepage refinement
+   Keeps the monochrome SNW system; reduces card treatment.
+   ============================================================ */
+:root{--space-section:clamp(78px,10vw,150px);--radius:0;--surface-soft:#080808;--line-soft:rgba(255,255,255,.12)}
+html{scroll-padding-top:72px}
+.nav{background:rgba(5,5,5,.86);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)}
+.hero{min-height:clamp(680px,94svh,980px);padding-top:150px;padding-bottom:clamp(72px,12vh,130px);align-items:flex-end;background-position:center}
+.hero:before{background:linear-gradient(180deg,rgba(0,0,0,.56),rgba(0,0,0,.05) 50%,#050505 96%)}
+.hero-copy{max-width:980px}.hero h1{font-size:clamp(60px,8.4vw,122px);line-height:1.02;margin:20px 0 28px}.hero .intro{max-width:600px}.actions a{border-radius:0;backdrop-filter:none;-webkit-backdrop-filter:none}.scroll{bottom:clamp(24px,5vh,58px)}
+.section{max-width:none;padding:var(--space-section) var(--pad);border-top:1px solid var(--line-soft)}
+.about{grid-template-columns:minmax(0,1.1fr) minmax(280px,.9fr);gap:clamp(48px,11vw,180px);max-width:var(--max-w)}
+.about-lead h2{font-size:clamp(38px,5vw,72px);line-height:1.12;margin-top:22px}.about-text{padding-top:42px}.about-text>p:first-child{font:400 clamp(22px,2.4vw,34px)/1.45 "Songti SC",Georgia,serif;color:#e8e8e3}.about-text>p:nth-child(2){max-width:500px}
+.research-home{max-width:none;background:#060606}.section-heading{max-width:var(--max-w);margin:0 auto 48px}.section-heading h2{margin-bottom:0}.research-list{max-width:var(--max-w);margin:0 auto;border-top:1px solid var(--line-soft)}.research-row{display:grid;grid-template-columns:90px minmax(250px,1.05fr) minmax(200px,.95fr) 32px;align-items:center;gap:28px;padding:28px 4px;border-bottom:1px solid var(--line-soft);color:var(--c-fg);text-decoration:none;transition:background var(--t-base),padding var(--t-base)}.research-row:hover{background:rgba(255,255,255,.035);padding-left:16px;padding-right:16px}.research-row-num{font:400 30px Georgia,serif;color:var(--c-dim)}.research-row-title{display:flex;flex-direction:column;gap:6px}.research-row-title b{font-size:9px;letter-spacing:.22em;color:var(--c-dim);font-weight:600}.research-row-title strong{font:400 clamp(20px,2.2vw,30px)/1.2 "Songti SC",Georgia,serif}.research-row-desc{font-size:13px;line-height:1.65;color:var(--c-muted);max-width:310px}.row-arrow{font-size:20px;color:var(--c-muted);transition:transform var(--t-fast),color var(--t-fast)}.research-row:hover .row-arrow{transform:translate(3px,-3px);color:#fff}
+.projects{background:#080808}.project-grid{max-width:var(--max-w);margin:0 auto;display:grid;grid-template-columns:1.35fr 1fr 1fr;border:0;border-top:1px solid var(--line-soft);border-bottom:1px solid var(--line-soft)}.project-card{min-height:350px;padding:34px 30px;border-right:1px solid var(--line-soft);background:transparent;transition:background var(--t-base)}.project-card:hover{background:rgba(255,255,255,.035)}.project-card:last-child{border-right:0}.project-feature{min-height:430px;padding:42px 38px}.project-card .project-status{top:32px;right:30px;border:0;padding:0;font-size:8px;letter-spacing:.08em}.project-feature .project-status{top:40px;right:38px}.project-card h3{font:400 clamp(26px,3vw,42px)/1.15 "Songti SC",Georgia,serif;margin:86px 0 18px}.project-card>p:not(.project-index){max-width:370px;min-height:0;color:var(--c-muted);line-height:1.75}.project-card>a{margin-top:32px;border-bottom:1px solid #777}.project-index{letter-spacing:.18em}
+.home-principles{background:#050505}.principle-editorial{max-width:var(--max-w);margin:0 auto;display:grid;grid-template-columns:1fr 1fr;column-gap:clamp(40px,11vw,170px);border-top:1px solid var(--line-soft)}.principle-editorial article{padding:34px 0 48px;border-bottom:1px solid var(--line-soft)}.principle-editorial article.offset{padding-top:104px}.principle-editorial b{font:11px Georgia,serif;color:var(--c-dim)}.principle-editorial h3{font:400 clamp(38px,5vw,72px)/1 "Songti SC",Georgia,serif;margin:22px 0 14px}.principle-editorial p{color:var(--c-muted);max-width:300px;font-size:13px}
+.story{grid-template-columns:minmax(260px,.8fr) minmax(0,1.2fr);gap:clamp(48px,10vw,170px);max-width:none;background:#080808}.story-copy{max-width:530px}.story-copy h2{font-size:clamp(36px,4.5vw,60px)}.story-copy>p:not(.kicker){color:var(--c-muted);max-width:540px}.story-timeline{border-top:1px solid var(--line-soft)}.story-node{position:relative;padding:25px 0 28px 28px;border-bottom:1px solid var(--line-soft)}.story-node:before{content:"";position:absolute;left:0;top:31px;width:8px;height:8px;border:1px solid #aaa;border-radius:50%;background:#080808}.story-node span{display:block;color:var(--c-dim);font:10px Georgia,serif;letter-spacing:.18em;margin-bottom:9px}.story-node strong{display:block;font:400 clamp(22px,2.6vw,34px)/1.2 "Songti SC",Georgia,serif}.story-node p{margin:8px 0 0;color:var(--c-muted);font-size:13px;max-width:470px}
+.news-preview{background:#050505}.news-list{max-width:var(--max-w);margin:0 auto}.news-item{grid-template-columns:110px minmax(0,1fr) 110px;padding:25px 4px;transition:background var(--t-base),padding var(--t-base)}.news-item:hover{background:rgba(255,255,255,.03);padding-left:14px;padding-right:14px}.news-item h3{font-size:23px}.news-item a{transition:color var(--t-fast)}
+.site-footer{position:relative;grid-template-columns:1.45fr repeat(3,1fr);gap:clamp(28px,6vw,92px);max-width:none;padding:86px var(--pad) 38px;background:#030303;border-top:1px solid var(--line-soft);overflow:hidden}.site-footer:after{content:"SOUTHNIGHT";position:absolute;right:-.04em;bottom:-.16em;color:rgba(255,255,255,.035);font:700 clamp(100px,20vw,310px)/.8 Arial,sans-serif;letter-spacing:-.09em;pointer-events:none;white-space:nowrap}.site-footer>*{position:relative;z-index:1}.footer-brand strong{font-size:17px;letter-spacing:.16em}.footer-brand p{font-size:22px}.site-footer a{width:max-content;max-width:100%;position:relative}.footer-copy{margin-top:42px!important}
+@media(max-width:800px){
+ :root{--space-section:76px;--pad:22px}.hero{min-height:calc(100svh - 0px);padding-top:124px;padding-bottom:96px}.hero h1{font-size:clamp(48px,14vw,64px);line-height:1.08;margin:16px 0 22px}.hero .intro{font-size:13.5px;line-height:1.8}.actions{display:grid;grid-template-columns:1fr 1fr}.actions a{min-height:46px;display:grid;place-items:center;padding:10px 6px}.scroll{display:none}
+ .about{gap:24px}.about-lead h2{font-size:clamp(36px,10vw,48px);line-height:1.2}.about-text{padding-top:0}.about-text>p:first-child{font-size:24px}.about-text>p:nth-child(2){font-size:13.5px}.about dl{margin-top:28px}
+ .section-heading{margin-bottom:30px}.section-heading>p{margin-top:15px}.research-row{grid-template-columns:42px minmax(0,1fr) 22px;gap:10px;padding:22px 0}.research-row:hover{padding-left:8px;padding-right:8px}.research-row-num{font-size:23px;align-self:start}.research-row-title strong{font-size:22px;line-height:1.25}.research-row-desc{grid-column:2/3;font-size:12.5px;max-width:none}.row-arrow{grid-column:3;grid-row:1/3;align-self:center}
+ .project-grid{grid-template-columns:1fr}.project-card,.project-feature{min-height:0;padding:30px 0;border-right:0;border-bottom:1px solid var(--line-soft)}.project-feature{padding-top:36px}.project-card:last-child{border-bottom:0}.project-card .project-status,.project-feature .project-status{top:36px;right:0}.project-card h3{font-size:30px;margin:68px 0 14px}.project-feature h3{font-size:36px}.project-card>p:not(.project-index){font-size:13px}.project-card>a{margin-top:22px}
+ .principle-editorial{grid-template-columns:1fr}.principle-editorial article,.principle-editorial article.offset{padding:28px 0 34px}.principle-editorial h3{font-size:48px;margin:18px 0 10px}.principle-editorial p{font-size:13px}
+ .story{grid-template-columns:1fr;gap:36px}.story-copy h2{font-size:40px}.story-node{padding-left:24px}.site-footer{grid-template-columns:1fr 1fr;gap:28px 22px;padding:62px var(--pad) 100px}.footer-brand{grid-column:1/-1}.footer-brand p{font-size:20px}.site-footer:after{font-size:112px;bottom:-.05em}.site-footer a{font-size:11.5px;overflow-wrap:anywhere}.footer-copy{margin-top:18px!important}
+}
+@media(min-width:801px) and (max-width:1100px){:root{--pad:44px}.research-row{grid-template-columns:65px minmax(220px,1fr) minmax(180px,1fr) 28px}.site-footer{grid-template-columns:1.2fr repeat(3,1fr);gap:28px}}
+
+
+/* ── Responsive reflow correction: About and small-screen sections ── */
+@media(max-width:800px){
+  body{padding-bottom:calc(68px + env(safe-area-inset-bottom))}
+  .about{display:grid;grid-template-columns:1fr;gap:24px;width:100%;max-width:none}
+  .about-lead,.about-text{min-width:0;width:100%}
+  .about-lead h2{max-width:100%;font-size:clamp(32px,9vw,48px);line-height:1.15;letter-spacing:-.04em;word-break:normal;overflow-wrap:normal;white-space:normal}
+  .about-text{padding-top:0}
+  .about-text>p:first-child{max-width:100%;font-size:clamp(22px,6.5vw,28px);line-height:1.35;word-break:normal;overflow-wrap:normal}
+  .about-text>p:nth-child(2){max-width:100%}
+  .about dl{width:100%}
+  .about dl div{min-width:0}
+  .about dd{max-width:64%;overflow-wrap:anywhere}
+  .role-feature{position:static}
+  .story,.principle-editorial,.project-grid{min-width:0}
+}
+@media(min-width:801px) and (max-width:1100px){
+  .about{grid-template-columns:minmax(0,1fr) minmax(260px,.9fr);gap:6vw}
+}
+@media(min-width:801px){
+  .about-lead h2{max-width:720px}
+}

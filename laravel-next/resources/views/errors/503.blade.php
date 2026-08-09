@@ -1,0 +1,2 @@
+@php($code=$exception->getStatusCode())
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{{ $code }} · Southnight.wiki</title><link rel="stylesheet" href="{{ asset('assets/style.css') }}"></head><body><main class="page-hero"><p class="eyebrow">ERROR · {{ $code }}</p><h1>{{ $code }}</h1><p>网站正在维护，请稍后再试。</p><p><a href="{{ route('home') }}">返回首页 →</a></p></main></body></html>
