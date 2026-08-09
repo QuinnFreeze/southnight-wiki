@@ -6,14 +6,19 @@
         <p class="eyebrow">AN INDEPENDENT INTERNET COMMUNITY</p>
         <h1 id="hero-title" data-zh="向南而行，<br><em>探索智能的长夜。</em>" data-en="Journey South,<br><em>explore the long night of intelligence.</em>">向南而行，<br><em>探索智能的长夜。</em></h1>
         <p class="intro" data-zh="南夜维基是一个起源于英国、以公共价值为导向的独立互联网社区。我们关注 AI 智能体如何真正服务人类，也持续研究互联网技术并维护网络安全。" data-en="Southnight.wiki is an independent internet community originating in the United Kingdom and guided by public value. We explore how AI agents can truly serve people, alongside internet technologies and cybersecurity.">南夜维基是一个起源于英国、以公共价值为导向的独立互联网社区。我们关注 AI 智能体如何真正服务人类，也持续研究互联网技术并维护网络安全。</p>
-        <div class="actions"><a class="primary" href="#about" data-zh="认识南夜维基 →" data-en="Discover SNW →">认识南夜维基 →</a><a class="secondary" href="{{ route("research") }}" data-zh="进入研究 →" data-en="Enter Research →">进入研究 →</a></div>
+        <div class="actions"><a class="primary" href="#explore-title" data-zh="探索南夜 →" data-en="Explore SNW →">探索南夜 →</a></div>
       </div>
       <p class="scroll" aria-hidden="true">SCROLL TO EXPLORE ↓</p>
     </section>
 
-    <section id="about" class="about section reveal">
-      <div class="about-lead"><p class="kicker"><span class="section-num">02</span> ABOUT · 关于南夜</p><h2 data-zh="一个起源于英国、以公共价值为导向的独立互联网社区。" data-en="An independent internet community guided by public value.">一个起源于英国、以公共价值为导向的独立互联网社区。</h2></div>
-      <div class="about-text"><p data-zh="技术不只关乎未来，也关乎每一个人的现在。" data-en="Technology is not only about the future, but everyone’s present.">技术不只关乎未来，也关乎每一个人的现在。</p><p data-zh="我们相信，人工智能与网络技术应当被负责任地理解、实践和分享。技术的价值，最终应由它为人类带来的福祉来衡量。" data-en="We believe AI and internet technologies should be understood, practised and shared responsibly. Their value should be measured by the benefit they bring to humanity.">我们相信，人工智能与网络技术应当被负责任地理解、实践和分享。技术的价值，最终应由它为人类带来的福祉来衡量。</p><dl><div><dt data-zh="起源" data-en="Origin">起源</dt><dd data-zh="英国 · United Kingdom" data-en="United Kingdom">英国 · United Kingdom</dd></div><div><dt data-zh="关注" data-en="Focus">关注</dt><dd data-zh="AI · 开放互联网 · 安全" data-en="AI · Open Web · Security">AI · 开放互联网 · 安全</dd></div><div><dt data-zh="性质" data-en="Type">性质</dt><dd data-zh="独立互联网社区" data-en="Independent community">独立互联网社区</dd></div></dl></div>
+    <section class="explore-portals section" aria-labelledby="explore-title">
+      <div class="portal-heading reveal"><p class="kicker"><span class="section-num">02</span> EXPLORE · 探索南夜</p><h2 id="explore-title" data-zh="从这里开始。" data-en="Start here.">从这里开始。</h2></div>
+      <div class="portal-grid">
+        <a class="portal-card reveal" href="{{ route('about') }}"><span>01 · ABOUT</span><strong data-zh="关于我们" data-en="About us">关于我们</strong><p data-zh="认识南夜的起源、定位与公共价值。" data-en="Our origins, identity and public values.">认识南夜的起源、定位与公共价值。</p><i aria-hidden="true">↗</i></a>
+        <a class="portal-card reveal" href="{{ route('research') }}"><span>02 · RESEARCH</span><strong data-zh="研究方向" data-en="Research">研究方向</strong><p data-zh="了解 AI、开放互联网与网络安全研究。" data-en="AI, the open internet and cybersecurity.">了解 AI、开放互联网与网络安全研究。</p><i aria-hidden="true">↗</i></a>
+        <a class="portal-card reveal" href="{{ route('leadership') }}"><span>03 · PEOPLE</span><strong data-zh="成员与历史" data-en="People & history">成员与历史</strong><p data-zh="查看共同维护南夜的成员与组织历程。" data-en="The people and history that shaped Southnight.wiki.">查看共同维护南夜的成员与组织历程。</p><i aria-hidden="true">↗</i></a>
+        <a class="portal-card reveal" href="{{ route('principles') }}"><span>04 · PRINCIPLES</span><strong data-zh="理念与原则" data-en="Principles">理念与原则</strong><p data-zh="理解我们对技术与公共价值的判断。" data-en="How we think about technology and public value.">理解我们对技术与公共价值的判断。</p><i aria-hidden="true">↗</i></a>
+      </div>
     </section>
 
     <section id="research" class="research-home section">
@@ -41,13 +46,8 @@
       <div class="principle-editorial"><article class="reveal"><b>01</b><h3 data-zh="人本" data-en="HUMAN">人本</h3><p data-zh="技术应服务于真实的人，而不是让人适应技术。" data-en="Technology should serve real people, not force people to adapt to it.">技术应服务于真实的人，而不是让人适应技术。</p></article><article class="reveal offset"><b>02</b><h3 data-zh="开放" data-en="OPEN">开放</h3><p data-zh="鼓励开放互联网、知识共享与技术探索。" data-en="We encourage the open internet, shared knowledge and exploration.">鼓励开放互联网、知识共享与技术探索。</p></article><article class="reveal"><b>03</b><h3 data-zh="安全" data-en="SAFE">安全</h3><p data-zh="重视隐私、安全、稳定性与负责任的技术实践。" data-en="We value privacy, security, stability and responsible practice.">重视隐私、安全、稳定性与负责任的技术实践。</p></article><article class="reveal offset"><b>04</b><h3 data-zh="公共价值" data-en="PUBLIC VALUE">公共价值</h3><p data-zh="优先考虑长期公共价值，而不是短期商业利益。" data-en="We prioritise long-term public value over short-term commercial gain.">优先考虑长期公共价值，而不是短期商业利益。</p></article></div>
     </section>
 
-    <section id="story" class="story section">
-      <div class="story-copy reveal"><p class="kicker"><span class="section-num">06</span> OUR STORY · 我们的故事</p><h2 data-zh="由同行者共同写下的历史。" data-en="A history written by our companions.">由同行者共同写下的历史。</h2><p data-zh="南夜维基起源于英国，在历任站长、总策划与成员的持续维护中，逐步形成对 AI 智能体、开放互联网、网络技术和安全实践的长期关注。" data-en="Originating in the United Kingdom, Southnight.wiki has been shaped by successive directors, its general planner and members into a long-term exploration of AI agents, the open internet, network technologies and security practice.">南夜维基起源于英国，在历任站长、总策划与成员的持续维护中，逐步形成对 AI 智能体、开放互联网、网络技术和安全实践的长期关注。</p><a href="{{ route("leadership") }}" class="story-link" data-zh="了解完整历史 →" data-en="Explore our history →">了解完整历史 →</a></div>
-      <div class="story-timeline"><div class="story-node"><span>ORIGIN</span><strong data-zh="起源于英国" data-en="Originating in the UK">起源于英国</strong><p data-zh="以公共价值为出发点，开始记录对技术的理解与实践。" data-en="A public-value-led beginning for understanding and practising technology.">以公共价值为出发点，开始记录对技术的理解与实践。</p></div><div class="story-node"><span>PEOPLE</span><strong data-zh="同行者接续维护" data-en="Shaped by companions">同行者接续维护</strong><p data-zh="历任站长、总策划与成员共同构成南夜的公开历史。" data-en="Successive directors, the planner and members shape the public record of SNW.">历任站长、总策划与成员共同构成南夜的公开历史。</p></div><div class="story-node"><span>PRESENT</span><strong data-zh="持续研究与实践" data-en="Research in progress">持续研究与实践</strong><p data-zh="当前关注 AI 智能体、开放互联网与网络安全。" data-en="Today, our focus is AI agents, the open internet and cybersecurity.">当前关注 AI 智能体、开放互联网与网络安全。</p></div></div>
-    </section>
-
     <section id="announcements" class="news-preview section">
-      <div class="section-heading reveal"><div><p class="kicker"><span class="section-num">07</span> LATEST · 最新动态</p><h2 data-zh="来自南夜的消息。" data-en="News from SNW.">来自南夜的消息。</h2></div><a href="https://dynamic.southnight.uk" class="section-link" data-zh="完整公告与账户中心 ↗" data-en="All announcements & account centre ↗">完整公告与账户中心 ↗</a></div>
+      <div class="section-heading reveal"><div><p class="kicker"><span class="section-num">06</span> LATEST · 最新动态</p><h2 data-zh="来自南夜的消息。" data-en="News from SNW.">来自南夜的消息。</h2></div><a href="{{ route('announcements.index') }}" class="section-link" data-zh="查看全部公告 →" data-en="View all notices →">查看全部公告 →</a></div>
       @include('components.announcement-list')
     </section>
 @endsection
