@@ -7,6 +7,7 @@ use App\Http\Controllers\AnnouncementController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AdminContentController;
 use App\Http\Controllers\ApiController;
+use App\Http\Controllers\SettingsController;
 
 Route::get('/', [SiteController::class, 'home'])->name('home');
 Route::get('/about', [SiteController::class, 'about'])->name('about');
@@ -15,6 +16,8 @@ Route::get('/leadership', [SiteController::class, 'leadership'])->name('leadersh
 Route::get('/principles', [SiteController::class, 'principles'])->name('principles');
 Route::get('/privacy', [SiteController::class, 'privacy'])->name('privacy');
 Route::get('/transparency', [SiteController::class, 'transparency'])->name('transparency');
+Route::get('/disclaimer', fn () => redirect('/transparency#disclaimer', 302))->name('disclaimer');
+Route::get('/settings', [SettingsController::class, 'index'])->name('settings');
 Route::get('/sitemap.xml', [SiteController::class, 'sitemap'])->name('sitemap');
 Route::get('/api/auth/me', [ApiController::class, 'me']);
 Route::post('/api/auth/login', [ApiController::class, 'login'])->middleware('throttle:6,1');
