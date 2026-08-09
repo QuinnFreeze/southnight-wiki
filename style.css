@@ -192,3 +192,26 @@ html{scroll-padding-top:72px}
  .story{grid-template-columns:1fr;gap:36px}.story-copy h2{font-size:40px}.story-node{padding-left:24px}.site-footer{grid-template-columns:1fr 1fr;gap:28px 22px;padding:62px var(--pad) 100px}.footer-brand{grid-column:1/-1}.footer-brand p{font-size:20px}.site-footer:after{font-size:112px;bottom:-.05em}.site-footer a{font-size:11.5px;overflow-wrap:anywhere}.footer-copy{margin-top:18px!important}
 }
 @media(min-width:801px) and (max-width:1100px){:root{--pad:44px}.research-row{grid-template-columns:65px minmax(220px,1fr) minmax(180px,1fr) 28px}.site-footer{grid-template-columns:1.2fr repeat(3,1fr);gap:28px}}
+
+
+/* ── Responsive reflow correction: About and small-screen sections ── */
+@media(max-width:800px){
+  body{padding-bottom:calc(68px + env(safe-area-inset-bottom))}
+  .about{display:grid;grid-template-columns:1fr;gap:24px;width:100%;max-width:none}
+  .about-lead,.about-text{min-width:0;width:100%}
+  .about-lead h2{max-width:100%;font-size:clamp(32px,9vw,48px);line-height:1.15;letter-spacing:-.04em;word-break:normal;overflow-wrap:normal;white-space:normal}
+  .about-text{padding-top:0}
+  .about-text>p:first-child{max-width:100%;font-size:clamp(22px,6.5vw,28px);line-height:1.35;word-break:normal;overflow-wrap:normal}
+  .about-text>p:nth-child(2){max-width:100%}
+  .about dl{width:100%}
+  .about dl div{min-width:0}
+  .about dd{max-width:64%;overflow-wrap:anywhere}
+  .role-feature{position:static}
+  .story,.principle-editorial,.project-grid{min-width:0}
+}
+@media(min-width:801px) and (max-width:1100px){
+  .about{grid-template-columns:minmax(0,1fr) minmax(260px,.9fr);gap:6vw}
+}
+@media(min-width:801px){
+  .about-lead h2{max-width:720px}
+}
