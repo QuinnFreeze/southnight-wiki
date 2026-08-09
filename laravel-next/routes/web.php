@@ -35,6 +35,7 @@ Route::middleware('auth')->group(function () {
 });
 Route::get('/announcements/{announcement}', [AnnouncementController::class, 'show'])->name('announcements.show');
 Route::middleware(['auth', 'admin'])->prefix('admin')->name('admin.')->group(function () {
+    Route::get('/', [AdminController::class, 'index'])->name('index');
     Route::get('/users', [AdminController::class, 'users'])->name('users');
     Route::put('/users/{user}', [AdminController::class, 'updateUser'])->name('users.update');
 

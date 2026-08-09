@@ -28,8 +28,10 @@
     <section id="projects" class="projects section">
       <div class="section-heading reveal"><div><p class="kicker"><span class="section-num">04</span> FEATURED PROJECTS · 项目与成果</p><h2 data-zh="把研究带入真实场景。" data-en="Research in real settings.">把研究带入真实场景。</h2></div><p data-zh="Research 是我们研究什么；Projects 是我们正在做什么。" data-en="Research is what we study. Projects are what we are making.">Research 是我们研究什么；Projects 是我们正在做什么。</p></div>
       <div class="project-grid">
+        @php($statusLabels=['in_progress'=>'进行中 · IN PROGRESS','exploring'=>'探索中','maintained'=>'长期维护'])
+        @php($projectAnchors=['ai-agent-practice'=>'ai-agents','open-internet'=>'internet-technology','cybersecurity-privacy'=>'cyber-security'])
         @foreach($projects as $project)
-        <article class="project-card {{ $loop->first ? 'project-feature' : '' }} reveal"><span class="project-status">{{ $project->status }}</span><p class="project-index">PROJECT {{ str_pad($loop->iteration,2,'0',STR_PAD_LEFT) }}{{ $loop->first ? ' · FEATURED' : '' }}</p><h3>{{ $project->title_zh }}</h3><p>{{ $project->summary_zh }}</p><a href="{{ route('research') }}" data-zh="了解项目 →" data-en="Discover project →">了解项目 →</a></article>
+        <article class="project-card {{ $loop->first ? 'project-feature' : '' }} reveal"><span class="project-status">{{ $statusLabels[$project->status] ?? $project->status }}</span><p class="project-index">PROJECT {{ str_pad($loop->iteration,2,'0',STR_PAD_LEFT) }}{{ $loop->first ? ' · FEATURED' : '' }}</p><h3>{{ $project->title_zh }}</h3><p>{{ $project->summary_zh }}</p><a href="{{ route('research') }}#{{ $projectAnchors[$project->slug] ?? '' }}" data-zh="了解项目 →" data-en="Discover project →">了解项目 →</a></article>
         @endforeach
       </div>
     </section>
