@@ -57,5 +57,5 @@
 @endsection
 
 @push('scripts')
-<script>(()=>{const sync=lang=>document.querySelectorAll('[data-zh-placeholder][data-en-placeholder]').forEach(input=>{input.placeholder=input.dataset[lang==='en'?'enPlaceholder':'zhPlaceholder']});sync(window.SNW?.getLanguage()||'zh')})();</script>
+<script>(()=>{const sync=lang=>document.querySelectorAll('[data-zh-placeholder][data-en-placeholder]').forEach(input=>{input.placeholder=input.dataset[lang==='en'?'enPlaceholder':'zhPlaceholder']});const snw=window.SNW;if(!snw)return;const setLanguage=snw.setLanguage;snw.setLanguage=lang=>{const result=setLanguage(lang);sync(lang);return result};sync(snw.getLanguage()||'zh')})();</script>
 @endpush
