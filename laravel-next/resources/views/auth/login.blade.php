@@ -2,7 +2,7 @@
 @section('title','登录 · 南夜维基')
 @section('description','登录南夜维基账户，访问个人资料与社区功能。')
 @push('styles')
-<link rel="stylesheet" href="{{ asset('assets/auth.css?v=20260811-03') }}">
+<link rel="stylesheet" href="{{ asset('assets/auth.css?v=20260811-04') }}">
 @endpush
 @section('content')
 <section class="page-hero page-hero-auth">
