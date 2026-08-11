@@ -39,7 +39,11 @@
 .auth-divider:before,.auth-divider:after{content:"";height:1px;flex:1;background:rgba(255,255,255,.08)}
 .auth-switch{margin:0;color:#777;font-size:11px;text-align:center}
 .auth-switch a{color:#ddd;text-underline-offset:4px;transition:color var(--t-fast)}
-.auth-switch a:hover{color:#fff}
+.auth-field-hint{margin:6px 2px 0;color:#666;font-size:9px;line-height:1.5}
+.auth-shell-register{gap:clamp(42px,7vw,104px)}
+.auth-card-register .auth-field{margin-bottom:15px}
+.auth-card-register .auth-submit{margin-top:21px}
+
 @media(max-width:800px){
  .page-hero-auth{min-height:240px;padding:112px var(--pad-sm) 34px}
  .page-hero-auth h1{font-size:44px;margin:9px 0 7px}
