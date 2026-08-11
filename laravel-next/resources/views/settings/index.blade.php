@@ -14,7 +14,7 @@
         <span class="settings-account-copy">
             <strong>{{ auth()->user()->username }}</strong>
             <span>{{ auth()->user()->email }}</span>
-            <small>UID {{ auth()->user()->id }}</small>
+            <small>UID {{ auth()->user()->uid }}</small>
         </span>
         <span class="settings-login-state is-signed-in"><i></i><span data-zh="已登录" data-en="Signed in">已登录</span></span>
         <span class="settings-chevron" aria-hidden="true">›</span>
@@ -33,13 +33,8 @@
     @endauth
 
     <div class="settings-list-section">
-        <p class="settings-section-title" data-zh="账户与偏好" data-en="Account & Preferences">账户与偏好</p>
+        <p class="settings-section-title" data-zh="语言" data-en="Language">语言</p>
         <div class="settings-list">
-            <a class="settings-item" href="@auth{{ route('account') }}@else{{ route('login') }}@endauth">
-                <span class="settings-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.5"/><path d="M5.5 20c.7-4 2.8-6 6.5-6s5.8 2 6.5 6"/><path d="M18 4.5l2 1v2.2c0 1.8-.8 3.3-2 4.1-1.2-.8-2-2.3-2-4.1V5.5l2-1Z"/></svg></span>
-                <span class="settings-item-copy"><strong data-zh="账户与安全" data-en="Account & Security">账户与安全</strong><small data-zh="资料、邮箱与密码" data-en="Profile, email and password">资料、邮箱与密码</small></span>
-                <span class="settings-chevron" aria-hidden="true">›</span>
-            </a>
             <div class="settings-item settings-language-item">
                 <span class="settings-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3.5 12h17M12 3c2.5 2.5 3.5 5.5 3.5 9s-1 6.5-3.5 9c-2.5-2.5-3.5-5.5-3.5-9S9.5 5.5 12 3Z"/></svg></span>
                 <span class="settings-item-copy"><strong data-zh="语言" data-en="Language">语言</strong><small id="settings-language-label">简体中文</small></span>
@@ -48,32 +43,6 @@
                     <button type="button" data-lang-choice="en">EN</button>
                 </span>
             </div>
-            <div class="settings-item">
-                <span class="settings-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M20 15.5A8.5 8.5 0 0 1 8.5 4 8.5 8.5 0 1 0 20 15.5Z"/><path d="M16.8 5.2h.01M19.5 8h.01"/></svg></span>
-                <span class="settings-item-copy"><strong data-zh="主题模式" data-en="Theme">主题模式</strong><small data-zh="黑色星空" data-en="Dark starfield">黑色星空</small></span>
-                <span class="settings-value" data-zh="深色" data-en="Dark">深色</span>
-            </div>
-        </div>
-    </div>
-
-    <div class="settings-list-section">
-        <p class="settings-section-title" data-zh="通知、隐私与数据" data-en="Notifications, Privacy & Data">通知、隐私与数据</p>
-        <div class="settings-list">
-            <a class="settings-item" href="{{ route('announcements.index') }}">
-                <span class="settings-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6.5 9a5.5 5.5 0 0 1 11 0v4l2 3H4.5l2-3V9Z"/><path d="M9.5 19h5"/></svg></span>
-                <span class="settings-item-copy"><strong data-zh="通知设置" data-en="Notifications">通知设置</strong><small data-zh="通过公告中心获取更新" data-en="Updates are provided through Notices">通过公告中心获取更新</small></span>
-                <span class="settings-value" data-zh="公告" data-en="Notices">公告</span><span class="settings-chevron" aria-hidden="true">›</span>
-            </a>
-            <a class="settings-item" href="{{ route('privacy') }}">
-                <span class="settings-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3 20 6v5c0 5-3.2 8.3-8 10-4.8-1.7-8-5-8-10V6l8-3Z"/><path d="m8.5 12 2.2 2.2 4.8-5"/></svg></span>
-                <span class="settings-item-copy"><strong data-zh="隐私设置" data-en="Privacy Settings">隐私设置</strong><small data-zh="数据权利与隐私联系" data-en="Data rights and privacy contact">数据权利与隐私联系</small></span>
-                <span class="settings-chevron" aria-hidden="true">›</span>
-            </a>
-            <a class="settings-item" href="{{ route('privacy') }}">
-                <span class="settings-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><ellipse cx="12" cy="6" rx="7.5" ry="3"/><path d="M4.5 6v6c0 1.7 3.4 3 7.5 3s7.5-1.3 7.5-3V6M4.5 12v6c0 1.7 3.4 3 7.5 3s7.5-1.3 7.5-3v-6"/></svg></span>
-                <span class="settings-item-copy"><strong data-zh="数据与 Cookie" data-en="Data & Cookies">数据与 Cookie</strong><small data-zh="必要技术与本地存储说明" data-en="Essential technologies and local storage">必要技术与本地存储说明</small></span>
-                <span class="settings-chevron" aria-hidden="true">›</span>
-            </a>
         </div>
     </div>
 
@@ -104,7 +73,7 @@
     </div>
 
     <div class="settings-list-section settings-list-section-last">
-        <p class="settings-section-title" data-zh="支持与账户" data-en="Support & Account">支持与账户</p>
+        <p class="settings-section-title" data-zh="账户" data-en="Account">账户</p>
         <div class="settings-list">
             <a class="settings-item" href="mailto:xiaoqiuyi@qiulan.wiki?subject=Southnight%20Feedback">
                 <span class="settings-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 5h16v11H9l-5 4V5Z"/><path d="M8 9h8M8 12h5"/></svg></span>

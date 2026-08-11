@@ -1,6 +1,7 @@
 <?php
 
 return [
-    'number' => env('APP_VERSION', '1.0.0'),
-    'build_date' => env('APP_BUILD_DATE', '2026-08-09'),
+    // Southnight release format: two-digit year.major.revision (for example 26.1.1).
+    'number' => env('APP_VERSION', '26.1.1'),
+    'build_date' => env('APP_BUILD_DATE', '2026-08-11'),
 ];

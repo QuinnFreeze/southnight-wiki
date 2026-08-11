@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 
 class ApiController extends Controller
 {
-    public function me() { $u=auth()->user(); return response()->json(['user'=>$u?['username'=>$u->username,'email'=>$u->email,'role'=>$u->role]:null]); }
+    public function me() { $u=auth()->user(); return response()->json(['user'=>$u?['uid'=>$u->uid,'username'=>$u->username,'email'=>$u->email,'role'=>$u->role]:null]); }
     public function announcements(Request $request) {
         $u=$request->user();
         $q=Announcement::with('author')->when(!$u || !$u->isAdmin(), fn($q)=>$q->published())->latestPublished();
@@ -24,8 +24,8 @@ class ApiController extends Controller
     }
     public function register(Request $request) {
         $data=$request->validate(['username'=>'required|string|min:3|max:24|unique:users,username','email'=>'required|email|max:255|unique:users,email','password'=>'required|string|min:10']);
-        $u=User::create(['name'=>$data['username'],'username'=>$data['username'],'email'=>$data['email'],'password'=>password_hash($data['password'],PASSWORD_DEFAULT),'role'=>User::count()===0?'admin':'user','status'=>'active']);
-        return response()->json(['ok'=>true,'message'=>'注册成功。','role'=>$u->role],201);
+        $u=User::createWithUniqueUid(['name'=>$data['username'],'username'=>$data['username'],'email'=>$data['email'],'password'=>password_hash($data['password'],PASSWORD_DEFAULT),'role'=>User::count()===0?'admin':'user','status'=>'active']);
+        return response()->json(['ok'=>true,'message'=>'注册成功。','uid'=>$u->uid,'role'=>$u->role],201);
     }
     public function logout(Request $request) { auth()->logout(); $request->session()->invalidate(); $request->session()->regenerateToken(); return response()->json(['ok'=>true]); }
 }
