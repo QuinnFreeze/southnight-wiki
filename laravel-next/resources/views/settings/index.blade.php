@@ -64,11 +64,11 @@
                 <span class="settings-item-copy"><strong data-zh="关于 Southnight" data-en="About Southnight">关于 Southnight</strong><small>Southnight.wiki · SNW</small></span>
                 <span class="settings-chevron" aria-hidden="true">›</span>
             </a>
-            <a class="settings-item" href="{{ route('transparency') }}">
+            <div class="settings-item" aria-label="当前版本 {{ $version }}">
                 <span class="settings-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 7h16M4 17h16M8 4v16M16 4v16"/></svg></span>
-                <span class="settings-item-copy"><strong data-zh="当前版本" data-en="Current Version">当前版本</strong><small data-static-zh="构建日期 {{ $buildDate }}" data-static-en="Build date {{ $buildDate }}">构建日期 {{ $buildDate }}</small></span>
-                <span class="settings-value">{{ $version }}</span><span class="settings-chevron" aria-hidden="true">›</span>
-            </a>
+                <span class="settings-item-copy"><strong data-zh="当前版本" data-en="Current Version">当前版本</strong></span>
+                <span class="settings-value">{{ $version }}</span>
+            </div>
         </div>
     </div>
 
