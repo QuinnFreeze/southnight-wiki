@@ -1,17 +1,18 @@
-/* Account flow navigation — return to Settings instead of the mobile tab bar. */
-.auth-page .nav-auth{justify-content:center}
-.auth-page .nav-auth .brand{margin:0 auto}
+/* Account flow navigation — keep the brand and Settings back arrow together on the left. */
+.auth-page .nav-auth{height:100px;justify-content:flex-start;align-items:flex-start;padding-top:12px;padding-bottom:10px}
+.auth-brand-stack{display:flex;flex-direction:column;align-items:flex-start;gap:8px}
+.auth-page .nav-auth .brand{margin:0}
 .auth-page .nav-auth>nav{display:none}
-.auth-back{position:absolute;left:var(--pad);display:grid;place-items:center;width:36px;height:36px;border:1px solid rgba(255,255,255,.15);border-radius:50%;background:rgba(8,8,8,.5);color:#aaa;text-decoration:none;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);transition:color var(--t-fast),border-color var(--t-fast),transform var(--t-fast)}
-.auth-back svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.55;stroke-linecap:round;stroke-linejoin:round}
+.auth-back{display:grid;place-items:center;width:30px;height:30px;margin-left:2px;border:1px solid rgba(255,255,255,.15);border-radius:50%;background:rgba(8,8,8,.5);color:#aaa;text-decoration:none;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);transition:color var(--t-fast),border-color var(--t-fast),transform var(--t-fast)}
+.auth-back svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:1.55;stroke-linecap:round;stroke-linejoin:round}
 .auth-back span{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 .auth-back:hover{color:#fff;border-color:rgba(255,255,255,.32);transform:translateX(-2px)}
 .auth-back:focus-visible{outline:1px solid #fff;outline-offset:5px}
 @media(max-width:800px){
  body.auth-page{padding-bottom:0}
- .auth-page .nav-auth{justify-content:center}
- .auth-page .nav-auth .brand{margin:0 auto}
- .auth-back{left:20px}
+ .auth-page .nav-auth{height:100px;justify-content:flex-start;padding-top:12px;padding-bottom:10px}
+ .auth-brand-stack{gap:7px}
+ .auth-back{margin-left:1px}
 }
 
 .page-hero-auth{min-height:330px;padding-top:132px;padding-bottom:42px}

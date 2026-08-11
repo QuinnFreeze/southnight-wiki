@@ -9,7 +9,16 @@
 </head>
 @php($authPage=request()->routeIs('login') || request()->routeIs('register'))
 <body class="{{ $authPage ? 'auth-page' : '' }}"><div class="noise" aria-hidden="true"></div>
-<header class="nav{{ $authPage ? ' nav-auth' : '' }}">@if($authPage)<a class="auth-back" href="{{ route('settings') }}" aria-label="返回设置 / Back to settings"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg><span data-zh="返回设置" data-en="Back to settings">返回设置</span></a>@endif<a class="brand" href="{{ route('home') }}" aria-label="南夜维基首页"><span class="mark">SNW</span><span class="brand-main">南夜维基</span><span class="brand-sub">Southnight.wiki</span></a><nav aria-label="主导航"><a class="{{ request()->routeIs('home')?'active':'' }}" href="{{ route('home') }}">首页</a><a class="{{ request()->routeIs('about')?'active':'' }}" href="{{ route('about') }}">关于</a><a class="{{ request()->routeIs('research')?'active':'' }}" href="{{ route('research') }}">研究</a><a class="{{ request()->routeIs('leadership')?'active':'' }}" href="{{ route('leadership') }}">成员</a><a class="{{ request()->routeIs('principles')?'active':'' }}" href="{{ route('principles') }}">理念</a></nav></header>
+<header class="nav{{ $authPage ? ' nav-auth' : '' }}">
+@if($authPage)
+<div class="auth-brand-stack">
+    <a class="brand" href="{{ route('home') }}" aria-label="南夜维基首页"><span class="mark">SNW</span><span class="brand-main">南夜维基</span><span class="brand-sub">Southnight.wiki</span></a>
+    <a class="auth-back" href="{{ route('settings') }}" aria-label="返回设置 / Back to settings"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg><span data-zh="返回设置" data-en="Back to settings">返回设置</span></a>
+</div>
+@else
+<a class="brand" href="{{ route('home') }}" aria-label="南夜维基首页"><span class="mark">SNW</span><span class="brand-main">南夜维基</span><span class="brand-sub">Southnight.wiki</span></a>
+@endif
+<nav aria-label="主导航"><a class="{{ request()->routeIs('home')?'active':'' }}" href="{{ route('home') }}">首页</a><a class="{{ request()->routeIs('about')?'active':'' }}" href="{{ route('about') }}">关于</a><a class="{{ request()->routeIs('research')?'active':'' }}" href="{{ route('research') }}">研究</a><a class="{{ request()->routeIs('leadership')?'active':'' }}" href="{{ route('leadership') }}">成员</a><a class="{{ request()->routeIs('principles')?'active':'' }}" href="{{ route('principles') }}">理念</a></nav></header>
 <main id="top">@yield('content')</main>
 @php($minimalFooter=request()->routeIs('announcements.*')||request()->routeIs('settings'))
 <footer class="site-footer{{ $minimalFooter ? ' site-footer-minimal' : '' }}">
