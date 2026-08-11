@@ -58,7 +58,6 @@
 .auth-field-hint{margin:6px 2px 0;color:#666;font-size:9px;line-height:1.5}
 .auth-shell-register{gap:clamp(42px,7vw,104px)}
 .auth-card-register .auth-field{margin-bottom:15px}
-.auth-card-register .auth-submit{margin-top:21px}
 
 @media(max-width:800px){
  .page-hero-auth{min-height:240px;padding:112px var(--pad-sm) 34px}
@@ -76,7 +75,8 @@
  .auth-card-copy strong{font-size:16px}
  .auth-field{margin-bottom:15px}
  .auth-field input,.auth-submit{height:47px;min-height:47px}
- .auth-submit{margin-top:22px}
+ .turnstile-slot{min-height:65px;margin:9px 0 0}
+ .turnstile-wrap{max-width:100%;overflow:hidden}
 }
 @media(max-width:360px){
  .auth-section{padding-right:16px;padding-left:16px}

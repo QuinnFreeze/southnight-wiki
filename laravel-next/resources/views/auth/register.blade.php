@@ -2,7 +2,7 @@
 @section('title','注册 · 南夜维基')
 @section('description','创建南夜维基账户，加入社区并使用账户功能。')
 @push('styles')
-<link rel="stylesheet" href="{{ asset('assets/auth.css?v=20260811-05') }}">
+<link rel="stylesheet" href="{{ asset('assets/auth.css?v=20260811-06') }}">
 @endpush
 @section('content')
 <section class="page-hero page-hero-auth">
@@ -55,6 +55,7 @@
                     <label for="password_confirmation" data-zh="确认密码" data-en="Confirm password">确认密码</label>
                     <input id="password_confirmation" name="password_confirmation" type="password" required minlength="10" autocomplete="new-password" data-zh-placeholder="再次输入密码" data-en-placeholder="Repeat your password" placeholder="再次输入密码">
                 </div>
+                <x-turnstile action="register" />
                 <button class="auth-submit" type="submit" data-zh="创建账户" data-en="Create account">创建账户</button>
             </form>
 

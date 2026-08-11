@@ -2,7 +2,7 @@
 @section('title','登录 · 南夜维基')
 @section('description','登录南夜维基账户，访问个人资料与社区功能。')
 @push('styles')
-<link rel="stylesheet" href="{{ asset('assets/auth.css?v=20260811-05') }}">
+<link rel="stylesheet" href="{{ asset('assets/auth.css?v=20260811-06') }}">
 @endpush
 @section('content')
 <section class="page-hero page-hero-auth">
@@ -46,6 +46,7 @@
                     <label for="password" data-zh="密码" data-en="Password">密码</label>
                     <input id="password" name="password" type="password" required autocomplete="current-password" data-zh-placeholder="输入密码" data-en-placeholder="Enter password" placeholder="输入密码">
                 </div>
+                <x-turnstile action="login" />
                 <button class="auth-submit" type="submit" data-zh="登录" data-en="Sign in">登录</button>
             </form>
 
