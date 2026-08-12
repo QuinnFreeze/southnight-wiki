@@ -31,4 +31,4 @@
 <p class="footer-copy">© <span id="year"></span> Southnight.wiki · SNW　 southnight.uk</p>
 @endif
 </footer>
-<script src="{{ asset('assets/script.js?v=20260812-01') }}"></script>@stack('scripts')</body></html>
+<script src="{{ asset('assets/script.js?v=20260812-02') }}"></script>@stack('scripts')</body></html>
