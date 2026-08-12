@@ -51,6 +51,7 @@
             </form>
 
             <div class="auth-divider" aria-hidden="true"><span>SNW</span></div>
+            <p class="auth-switch"><a href="{{ route('account.recovery') }}" data-zh="忘记密码或找回账户" data-en="Forgot password or recover account">忘记密码或找回账户</a></p>
             <p class="auth-switch"><span data-zh="还没有账户？" data-en="No account yet?">还没有账户？</span> <a href="{{ route('register') }}" data-zh="创建账户" data-en="Create an account">创建账户</a></p>
         </div>
     </div>

@@ -29,12 +29,19 @@ Route::get('/login', [AuthController::class, 'showLogin'])->name('login');
 Route::post('/login', [AuthController::class, 'login'])->middleware(['throttle:6,1', 'turnstile:login'])->name('login.submit');
 Route::get('/register', [AuthController::class, 'showRegister'])->name('register');
 Route::post('/register', [AuthController::class, 'register'])->middleware(['throttle:5,10', 'turnstile:register'])->name('register.submit');
+Route::get('/account/recovery', [AuthController::class, 'showRecovery'])->name('account.recovery');
+Route::post('/account/recovery/code', [AuthController::class, 'sendRecoveryCode'])->middleware(['throttle:3,10', 'turnstile:recovery-send'])->name('account.recovery.send');
+Route::post('/account/recovery/verify', [AuthController::class, 'verifyRecoveryCode'])->middleware(['throttle:10,10', 'turnstile:recovery-verify'])->name('account.recovery.verify');
+Route::post('/account/recovery/password', [AuthController::class, 'resetRecoveredPassword'])->middleware(['throttle:5,10', 'turnstile:recovery-reset'])->name('account.recovery.reset');
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 Route::get('/announcements', [AnnouncementController::class, 'index'])->name('announcements.index');
 Route::middleware('auth')->group(function () {
     Route::get('/account', [AuthController::class, 'account'])->name('account');
     Route::put('/account/profile', [AuthController::class, 'updateProfile'])->middleware('turnstile:account-profile')->name('account.profile');
+    Route::post('/account/email/send', [AuthController::class, 'sendEmailVerification'])->middleware(['throttle:3,10', 'turnstile:email-verification-send'])->name('account.email.send');
+    Route::post('/account/email/verify', [AuthController::class, 'verifyEmail'])->middleware(['throttle:10,10', 'turnstile:email-verification-verify'])->name('account.email.verify');
     Route::put('/account/password', [AuthController::class, 'updatePassword'])->middleware('turnstile:account-password')->name('account.password');
+    Route::put('/account/password/email', [AuthController::class, 'updatePasswordByEmail'])->middleware('turnstile:account-password-email')->name('account.password.email');
 });
 Route::get('/announcements/{announcement}', [AnnouncementController::class, 'show'])->name('announcements.show');
 Route::middleware(['auth', 'admin'])->prefix('admin')->name('admin.')->group(function () {
