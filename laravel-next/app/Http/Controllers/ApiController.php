@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Announcement;
 use App\Models\User;
+use App\Support\EmailVerification;
 use Illuminate\Http\Request;
 
 class ApiController extends Controller
@@ -17,14 +18,15 @@ class ApiController extends Controller
     }
     public function login(Request $request) {
         $data=$request->validate(['identity'=>'required|string','password'=>'required|string']);
-        $u=User::where('username',$data['identity'])->orWhere('email',$data['identity'])->first();
+        $u=User::where('username',$data['identity'])->orWhere('email',EmailVerification::normalizeEmail($data['identity']))->first();
         if(!$u || $u->status!=='active' || !$u->verifyPassword($data['password'])) return response()->json(['error'=>'用户名、邮箱或密码不正确。'],401);
         auth()->login($u,true); $request->session()->regenerate(); $u->forceFill(['last_login_at'=>now()])->save();
         return response()->json(['ok'=>true,'user'=>['username'=>$u->username,'role'=>$u->role]]);
     }
     public function register(Request $request) {
+        $request->merge(['email'=>\App\Support\EmailVerification::normalizeEmail((string) $request->input('email'))]);
         $data=$request->validate(['username'=>'required|string|min:3|max:24|unique:users,username','email'=>'required|email|max:255|unique:users,email','password'=>'required|string|min:10']);
-        $u=User::createWithUniqueUid(['name'=>$data['username'],'username'=>$data['username'],'email'=>$data['email'],'password'=>password_hash($data['password'],PASSWORD_DEFAULT),'role'=>User::count()===0?'admin':'user','status'=>'active']);
+        $u=User::createWithUniqueUid(['name'=>$data['username'],'username'=>$data['username'],'email'=>$data['email'],'email_verified_at'=>null,'password'=>password_hash($data['password'],PASSWORD_DEFAULT),'role'=>User::count()===0?'admin':'user','status'=>'active']);
         return response()->json(['ok'=>true,'message'=>'注册成功。','uid'=>$u->uid,'role'=>$u->role],201);
     }
     public function logout(Request $request) { auth()->logout(); $request->session()->invalidate(); $request->session()->regenerateToken(); return response()->json(['ok'=>true]); }

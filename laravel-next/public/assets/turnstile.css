@@ -1,0 +1,10 @@
+/* Shared Turnstile widget surface for auth and future sensitive forms. */
+.turnstile-slot{display:flex;align-items:center;min-height:65px;margin:10px 0 2px;overflow:hidden}
+.turnstile-wrap{width:100%;min-width:0}
+.turnstile-wrap .cf-turnstile{max-width:100%}
+.turnstile-unavailable{margin:10px 0;color:#c9a3a3;font-size:10px;line-height:1.5}
+.turnstile-slot-deferred{min-height:0;margin:0}
+@media(max-width:360px){
+ .turnstile-slot{min-height:140px;align-items:flex-start}
+ .turnstile-wrap{max-width:100%;overflow:hidden}
+}

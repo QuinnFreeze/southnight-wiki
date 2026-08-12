@@ -10,9 +10,9 @@ class User extends Authenticatable
 {
     use Notifiable;
 
-    protected $fillable = ['name','username','email','password','password_hash','password_salt','role','status','last_login_at'];
+    protected $fillable = ['name','username','email','email_verified_at','password','password_hash','password_salt','role','status','last_login_at'];
     protected $hidden = ['password','password_hash','password_salt','remember_token'];
-    protected $casts = ['last_login_at'=>'datetime'];
+    protected $casts = ['last_login_at'=>'datetime', 'email_verified_at'=>'datetime'];
 
     protected static function booted(): void
     {
